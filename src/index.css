@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.btn-outline-green {
+  color: white;
+  border-color: #329329;
+}
+
+#logo * {
+  width: 250px;
+  display: inline;
+  height: 80px;
+  fill-opacity: 0;
+  transition: fill-opacity 1.5s;
+  margin-left: 0;
+}
+
+#logo.finished * {
+  fill-opacity: 1;
+}
+
+.full-page {
+  height: 100%;
+}
+
+.sidebar {
+  background-color: gray;
+}
+
+.navbar-collapse {
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  .navbar-collapse .btn {
+    padding: 15px 25px 15px 25px;
+  }
+}
+
+#navbarNav li {
+  margin-right: 25px;
+  font-size: 22px;
+}
+
+.login-register-group {
+  float: right;
+}
+.login-register-group .btn {
+  margin-right: 10px;
+}
+@media screen and (max-width: 991px) {
+  .login-register-group .btn {
+    margin-right: 5px;
+  }
+}
+
+.jumbotron {
+  margin: 0px 0px 0px 0px;
+}
+
+.footer-links {
+  color: white;
+}
+
+.footer-header {
+  color: white;
+}
+
+.copyright {
+  background-color: #4b545c;
+  color: white;
+}
+.copyright span {
+  font-size: 15px;
+}
+
+.social-icons {
+  font-size: 30px;
+}
+
+.footer-info {
+  color: white;
+}
+
+#footer-logo {
+  height: 150px;
+  width: 250px;
+}
+
+.footer-icon-bar {
+  background-color: #329329;
+}
+.footer-icon-bar .social-icon {
+  color: #212629;
+}
+
+.carousel-control-prev {
+  color: black;
+}
+
+.outline {
+  background-color: #343A40;
+}
+
+.side-menu-item {
+  text-align: left;
+}
+
+.menu-item-label {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.dropdown-toggle {
+  text-align: right;
+}
+
+.submit-button {
+  margin-top: 15px;
+}
+
+.no-padding {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+.carousel-inner .carousel-item-right.active,
+.carousel-inner .carousel-item-next {
+  transform: translateX(25%);
+}
+
+.carousel-inner .carousel-item-left.active,
+.carousel-inner .carousel-item-prev {
+  transform: translateX(-25%);
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+  transform: translateX(0);
+}
+
+.featured-listings-title h4 {
+  margin-top: 10px;
+  margin-left: 25px;
+  color: green;
+}
+
+.featured-listing {
+  width: 245px;
+  height: 315px;
+  margin: 10px 0px 10px 10px;
+  box-shadow: 1px 5px 5px grey;
+}
+
+.featured-image {
+  width: 245px;
+  height: 200px;
+}
+
+.featured-price {
+  font-size: 25px;
+  color: #329329;
+  margin-bottom: 15px;
+}
+
+.featured-seller-plus-distance {
+  font-size: 15px;
+  color: #9a9a9c;
+}
+
+#left-text {
+  float: left;
+}
