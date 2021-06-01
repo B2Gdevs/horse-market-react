@@ -3,6 +3,7 @@ import {NavigationBar} from "../components/navbar";
 import styled from "styled-components";
 import {Footer} from "../components/footer";
 import horse1 from "../assets/horse1.jpg";
+import { Link } from "react-router-dom";
 
 const Styles = styled.div`
 
@@ -138,7 +139,9 @@ const MakeListing = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <button className={"btn btn-outline-success mx-auto"}>Create</button>
+                            <Link to='/subscription-page'>
+                              <button className={"btn btn-outline-success mx-auto"}>Create</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

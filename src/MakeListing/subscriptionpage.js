@@ -2,6 +2,8 @@ import React from 'react';
 import {NavigationBar} from "../components/navbar";
 import styled from "styled-components";
 import {Footer} from "../components/footer";
+import { Link } from "react-router-dom";
+
 
 const Styles = styled.div`
 
@@ -28,7 +30,10 @@ const SubscriptionPage = () => {
                                     <li className="list-group-item">6 Photos</li>
                                     <li className="list-group-item">Basic Listing feature</li>
                                     <li className="list-group-item"
-                                        style={{backgroundColor: 'green', color: 'white'}}>Choose Plan
+                                        style={{backgroundColor: 'green', color: 'white'}}>
+                                            <Link to='/buy-listing'>
+                                                Choose Plan
+                                            </Link>
                                     </li>
                                 </ul>
 
@@ -48,7 +53,10 @@ const SubscriptionPage = () => {
                                     <li className="list-group-item">10 Photos</li>
                                     <li className="list-group-item">Basic listing features</li>
                                     <li className="list-group-item"
-                                        style={{color: '#3A8DDA'}}>Choose Plan
+                                        style={{color: '#3A8DDA'}}>
+                                            <Link to='/buy-listing'>
+                                                Choose Plan
+                                            </Link>
                                     </li>
                                 </ul>
 
@@ -69,7 +77,10 @@ const SubscriptionPage = () => {
                                     <li className="list-group-item">20 Photos</li>
                                     <li className="list-group-item">Basic listing features</li>
                                     <li className="list-group-item"
-                                        style={{color: '#3A8DDA'}}>Choose Plan
+                                        style={{color: '#3A8DDA'}}>
+                                            <Link to='/buy-listing'>
+                                                Choose Plan
+                                            </Link>
                                     </li>
                                 </ul>
 

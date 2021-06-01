@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {Footer} from "../components/footer";
 import {Modal} from "antd";
 import 'antd/dist/antd.css';
+import { useHistory } from "react-router-dom";
 
 const Styles = styled.div`
 
@@ -12,13 +13,15 @@ const Styles = styled.div`
 const BuyListing = () => {
 
     const [isModalVisible, setIsModalVisible] = useState(false);
-
+    const history = useHistory();
     const showModal = () => {
         setIsModalVisible(true);
     };
 
     const handleOk = () => {
         setIsModalVisible(false);
+        history.push('/');
+
     };
 
     const handleCancel = () => {
