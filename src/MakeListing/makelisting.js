@@ -8,9 +8,33 @@ const Styles = styled.div`
    input[type="file"] {
         display: none;
    }
+   
+   .remove-button {
+        color: red
+   }
 `
 
 const MakeListing = () => {
+    const horseData = [
+        {
+            image: horse1,
+        },
+        {
+            image: horse1,
+        },
+        {
+            image: horse1,
+        },
+        {
+            image: horse1,
+        },
+        {
+            image: horse1,
+        },
+        {
+            image: horse1,
+        }
+    ]
     return (
         <Styles>
             <div className="">
@@ -102,44 +126,14 @@ const MakeListing = () => {
                         </div>
                         <p>Add some appealings photos of your horse for sale!</p>
                         <div className="row">
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
+                            {horseData.map((data) => (
+                                <div className="col-md-4">
+                                    <img className="w-100" src={data.image} alt={"img"}/>
+                                    <div className="d-flex">
+                                        <button className={"ml-auto remove-button btn"}>Remove</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                         <div className="row">
                             <button className={"btn btn-outline-success mx-auto"}>Create</button>

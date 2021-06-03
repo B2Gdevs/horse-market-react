@@ -112,6 +112,28 @@ const Styles = styled.div`
 const ListingsSearch = () => {
     const [liked, setLiked] = useState(false)
 
+    const horseData = [
+        {
+            image: horse1,
+            desc: "2 year old stud!",
+            location: "Private Seller - 9 mi"
+        },
+        {
+            image: horse1,
+            desc: "2 year old stud!",
+            location: "Private Seller - 9 mi"
+        }
+        , {
+            image: horse1,
+            desc: "2 year old stud!",
+            location: "Private Seller - 9 mi"
+        }
+        , {
+            image: horse1,
+            desc: "2 year old stud!",
+            location: "Private Seller - 9 mi"
+        }
+    ]
 
     return (
         <Styles>
