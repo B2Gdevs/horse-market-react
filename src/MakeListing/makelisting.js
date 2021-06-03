@@ -5,8 +5,9 @@ import {Footer} from "../components/footer";
 import horse1 from "../assets/horse1.jpg";
 
 const Styles = styled.div`
-
-
+   input[type="file"] {
+        display: none;
+   }
 `
 
 const MakeListing = () => {
@@ -92,8 +93,12 @@ const MakeListing = () => {
                     <div className="my-5">
                         <h5>Images</h5>
                         <div className="d-flex">
-                            <button className={"btn btn-outline-dark mr-3"}>Choose File</button>
-                            <p className={"my-auto"}>No File Chosen</p>
+                            <form>
+                                <label className="btn btn-outline-dark">
+                                    <input type="file"/>
+                                    Choose File
+                                </label>
+                            </form>
                         </div>
                         <p>Add some appealings photos of your horse for sale!</p>
                         <div className="row">
