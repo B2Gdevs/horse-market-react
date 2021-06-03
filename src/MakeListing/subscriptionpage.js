@@ -7,6 +7,17 @@ const Styles = styled.div`
     .card-header-text h1,h5{
         color: #2E64EE !important;
     }
+    .choose-plan {
+        color: #2E64EE;
+        text-align: center
+    }
+    .choose-plan a {
+        text-decoration: none;
+    }
+    .choose-plan:hover {
+        color: white;
+        background-color:green
+    }
 `
 
 const SubscriptionPage = () => {
@@ -27,9 +38,10 @@ const SubscriptionPage = () => {
                                 <ul className="list-group mt-4">
                                     <li className="list-group-item">6 Photos</li>
                                     <li className="list-group-item">Basic Listing feature</li>
-                                    <li className="list-group-item"
-                                        style={{backgroundColor: 'green', color: 'white'}}>Choose Plan
-                                    </li>
+                                    <a href={"/buy-listing"} style={{textDecoration: "none"}}>
+                                        <li className="list-group-item choose-plan">Choose Plan
+                                        </li>
+                                    </a>
                                 </ul>
 
                             </div>
@@ -47,9 +59,10 @@ const SubscriptionPage = () => {
                                     <li className="list-group-item">Youtube video link space</li>
                                     <li className="list-group-item">10 Photos</li>
                                     <li className="list-group-item">Basic listing features</li>
-                                    <li className="list-group-item"
-                                        style={{color: '#3A8DDA'}}>Choose Plan
-                                    </li>
+                                    <a href={"/buy-listing"} style={{textDecoration: "none"}}>
+                                        <li className="list-group-item choose-plan">Choose Plan
+                                        </li>
+                                    </a>
                                 </ul>
 
                             </div>
@@ -68,9 +81,10 @@ const SubscriptionPage = () => {
                                     <li className="list-group-item">Multiple Youtube Video Link Space</li>
                                     <li className="list-group-item">20 Photos</li>
                                     <li className="list-group-item">Basic listing features</li>
-                                    <li className="list-group-item"
-                                        style={{color: '#3A8DDA'}}>Choose Plan
-                                    </li>
+                                    <a href={"/buy-listing"} style={{textDecoration: "none"}}>
+                                        <li className="list-group-item choose-plan">Choose Plan
+                                        </li>
+                                    </a>
                                 </ul>
 
                             </div>
