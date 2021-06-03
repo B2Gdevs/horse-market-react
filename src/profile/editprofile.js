@@ -9,11 +9,16 @@ import computer from '../assets/computer.jpg'
 import list from '../assets/list.jpg'
 
 const Styles = styled.div`
+    .page-content {
+        position: relative; 
+        overflow: auto;
+    }
     .sidenav {
         opacity:0.8;
         width:20%;
         height:700px;
         overflow: auto;
+        color: gray;
     }
     .mainarea {
         opacity:0.8;
@@ -24,6 +29,24 @@ const Styles = styled.div`
     .side-bar-text {
         color: white
         font-size: 18px;
+    }
+    .navbar-icons {
+        width: 30px; 
+        height: 30px;
+    }
+    .navbar-text {
+        margin: 0; 
+        padding: 0;        
+    }
+    .icon-col {
+        height: 700px; 
+        width: 30%; 
+        background-color: #343A40;
+    }
+    .text-col {
+        height: 700px; 
+        width: 50%; 
+        background-color: #329329;
     }
 `
 const EditProfile = () => {
@@ -46,31 +69,31 @@ const EditProfile = () => {
     return (
         <Styles>
             <div className="">
-                <div className="d-flex" style={{position: "relative", overflow: "auto"}}>
-                    <div style={{color: "gray"}} className="sidenav d-flex">
-                        <div className="" style={{height: "700", width: "30%", backgroundColor: "#343A40"}}>
+                <div className="d-flex page-content" style={{}}>
+                    <div className="sidenav d-flex">
+                        <div className="icon-col" style={{}}>
                             <div className="row mt-4 ml-2">
                                 <div className="col-md-12">
-                                    <img style={{width: "30px", height: "30px"}} src={computer}/>
+                                    <img className={"navbar-icons"} src={computer}/>
                                 </div>
                                 <div className="col-md-12 my-5">
-                                    <img style={{width: "30px", height: "30px"}} src={avatar}/>
+                                    <img className={"navbar-icons"} src={avatar}/>
                                 </div>
                                 <div className="col-md-12">
-                                    <img style={{width: "30px", height: "30px"}} src={list}/>
+                                    <img className={"navbar-icons"} src={list}/>
                                 </div>
                             </div>
                         </div>
-                        <div className="" style={{height: "700", width: "50%", backgroundColor: "#329329"}}>
+                        <div className="text-col" style={{}}>
                             <div className="row mt-4 ml-2">
                                 <div className="col-md-12 side-bar-text">
-                                    <p style={{margin: 0, padding: 0}}>Dashboard</p>
+                                    <p className={"navbar-text"}>Dashboard</p>
                                 </div>
                                 <div className="col-md-12 my-5 side-bar-text">
-                                    <p style={{margin: 0, padding: 0}}>Edit Profile</p>
+                                    <p className={"navbar-text"}>Edit Profile</p>
                                 </div>
                                 <div className="col-md-12 side-bar-text">
-                                    <p style={{margin: 0, padding: 0}}>Your Listings</p>
+                                    <p className={"navbar-text"}>Your Listings</p>
                                 </div>
                             </div>
                         </div>

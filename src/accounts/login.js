@@ -10,6 +10,10 @@ const Styles = styled.div`
     .login-container {
         margin: 57px 0 60px 0
     }
+    .login-container-content {
+        position: relative; 
+        overflow: auto;
+    }
 `
 
 const Login = () => {
@@ -17,7 +21,7 @@ const Login = () => {
         <Styles>
             <div className="">
                 <div className="login-container">
-                    <div className={"container main-area p-5"} style={{position: "relative", overflow: "auto"}}>
+                    <div className={"container main-area p-5 login-container-content"}>
                         <div className="row">
                             <div className="col-md-6 border-right">
                                 <h3 className={"mb-5"}>Register</h3>

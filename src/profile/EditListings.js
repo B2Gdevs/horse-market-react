@@ -6,7 +6,9 @@ import horse1 from "../assets/horse1.jpg";
 import {Modal} from "antd";
 
 const Styles = styled.div`
-
+   .remove-button {
+        color: red
+   }
 `
 const EditListing = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -22,6 +24,26 @@ const EditListing = () => {
     const handleCancel = () => {
         setIsModalVisible(false);
     };
+    const horseData = [
+        {
+            image: horse1,
+        },
+        {
+            image: horse1,
+        },
+        {
+            image: horse1,
+        },
+        {
+            image: horse1,
+        },
+        {
+            image: horse1,
+        },
+        {
+            image: horse1,
+        }
+    ]
     return (
         <Styles>
             <div className="">
@@ -109,44 +131,14 @@ const EditListing = () => {
                         </div>
                         <p>Add some appealings photos of your horse for sale!</p>
                         <div className="row">
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
+                            {horseData.map((data) => (
+                                <div className="col-md-4">
+                                    <img className="w-100" src={data.image} alt={"img"}/>
+                                    <div className="d-flex">
+                                        <button className={"ml-auto remove-button btn"}>Remove</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
-                                </div>
-                            </div>
-                            <div className="col-md-4">
-                                <img className="w-100" src={horse1} alt={"img"}/>
-                                <div className="d-flex">
-                                    <p className={"ml-auto"} style={{color: "red"}}>Remove</p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                         <div className="row">
                             <button onClick={showModal} className={"btn btn-outline-success mx-auto"}>Save Changes

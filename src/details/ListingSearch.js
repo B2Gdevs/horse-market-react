@@ -108,6 +108,23 @@ const Styles = styled.div`
         margin-top: 5px;
         margin-bottom: 5px;
     }
+    
+    .matches {
+        background-color: #464F58; 
+        color: white;
+    }
+    
+    .sort {
+        background-color: #6D7985; 
+        color: white;
+    }
+    
+    .listing-area {
+        background-color: black;
+    }
+    .listing-content {
+        background-color: white;
+    }
   `
 const ListingsSearch = () => {
     const [liked, setLiked] = useState(false)
@@ -272,12 +289,12 @@ const ListingsSearch = () => {
                         </div>
                         <div className="col-md-9" style={{margin: 0, padding: 0}}>
                             <div className="p-3">
-                                <div className="row p-3" style={{backgroundColor: "#464F58", color: "white"}}>
+                                <div className="row p-3 matches">
                                     <div className="row mx-auto">
                                         Showing 1 out of 1 Matches
                                     </div>
                                 </div>
-                                <div className="row p-3" style={{backgroundColor: "#6D7985", color: "white"}}>
+                                <div className="row p-3 sort">
                                     <p>Sort</p>
                                     <div className="">
                                         <p>By Distance</p>
@@ -316,8 +333,8 @@ const ListingsSearch = () => {
                                         </select>
                                     </div>
                                 </div>
-                                <div className="row p-4" style={{backgroundColor: "black"}}>
-                                    <div className="col-md-12 p-5" style={{backgroundColor: "white"}}>
+                                <div className="row p-4 listing-area">
+                                    <div className="col-md-12 p-5 listing-content">
                                         <div className="row">
                                             <p className={"mr-auto"}>100K WINNING STUD</p>
                                             <p>$5000</p>
