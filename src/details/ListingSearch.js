@@ -10,7 +10,7 @@ import horse2 from '../assets/horse2.jpg';
 import horse3 from '../assets/horse3.jpeg';
 import horse4 from '../assets/horse4.jpg';
 import 'antd/dist/antd.css';
-import {AiOutlineHeart} from 'react-icons/ai';
+import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai';
 import {HiLocationMarker} from 'react-icons/hi';
 import MultiSelectFilter from "../components/FilterItems/multiSelectFilter";
 import SingleSelectFilter from "../components/FilterItems/singleSelectFilter";
@@ -110,6 +110,8 @@ const Styles = styled.div`
     }
   `
 const ListingsSearch = () => {
+    const [liked, setLiked] = useState(false)
+
 
     return (
         <Styles>
@@ -301,7 +303,11 @@ const ListingsSearch = () => {
                                         <div className="row">
                                             <div className="col-md-4">
                                                 <img className="" src={horse1} alt={"img"}/>
-                                                <AiOutlineHeart/>
+                                                {liked ? <AiFillHeart onClick={() => {
+                                                    setLiked(!liked)
+                                                }}/> : <AiOutlineHeart onClick={() => {
+                                                    setLiked(!liked)
+                                                }}/>}
                                             </div>
                                             <div className="col-md-6 offset-md-1">
                                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting
