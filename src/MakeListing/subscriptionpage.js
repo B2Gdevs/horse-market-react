@@ -4,8 +4,9 @@ import styled from "styled-components";
 import {Footer} from "../components/footer";
 
 const Styles = styled.div`
-
-
+    .card-header-text h1,h5{
+        color: #2E64EE !important;
+    }
 `
 
 const SubscriptionPage = () => {
@@ -17,7 +18,7 @@ const SubscriptionPage = () => {
                         <div className="col-md-4">
                             <div className="card shadow pt-5">
 
-                                <div className="text-center px-5">
+                                <div className="text-center px-5 card-header-text">
                                     <h5>Basic</h5>
                                     <h1>$ 1 Per Month</h1>
                                     <h5>End Subscription whenever you want</h5>
@@ -34,9 +35,9 @@ const SubscriptionPage = () => {
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <div className="card shadow pt-5">
+                            <div className="card shadow pt-5 ">
 
-                                <div className="text-center px-5">
+                                <div className="text-center px-5 card-header-text">
                                     <h5>Upcoming Plan</h5>
                                     <h1>$ 5 Per Month</h1>
                                     <h5>End Subscription whenever you want</h5>
@@ -56,7 +57,7 @@ const SubscriptionPage = () => {
                         <div className="col-md-4">
                             <div className="card shadow pt-5">
 
-                                <div className="text-center px-5">
+                                <div className="text-center px-5 card-header-text">
                                     <h5>Upcoming Plan</h5>
                                     <h1>$ 10 Per Month</h1>
                                     <h5>End Subscription whenever you want</h5>

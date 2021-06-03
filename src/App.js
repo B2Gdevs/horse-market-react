@@ -22,8 +22,6 @@ function App() {
             <Router>
                 <NavigationBar/>
                 <Switch>
-                    {/*<Route exact path="/" component={Home}/>*/}
-                    {/*<Route exact path="/listings" component={Listings}/>*/}
 
                     <Route exact path="/" component={LandingPage}/>
 
