@@ -16,7 +16,6 @@ const Login = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
                 <div className="login-container">
                     <div className={"container main-area p-5"} style={{position: "relative", overflow: "auto"}}>
                         <div className="row">
@@ -37,8 +36,6 @@ const Login = () => {
                         </div>
                     </div>
                 </div>
-
-                <Footer/>
             </div>
         </Styles>
     );

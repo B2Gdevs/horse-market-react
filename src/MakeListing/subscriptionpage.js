@@ -12,7 +12,6 @@ const SubscriptionPage = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
                 <div className="container my-5">
                     <div className="row">
                         <div className="col-md-4">
@@ -77,8 +76,6 @@ const SubscriptionPage = () => {
                         </div>
                     </div>
                 </div>
-
-                <Footer/>
             </div>
 
         </Styles>

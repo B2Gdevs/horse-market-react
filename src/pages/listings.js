@@ -1,12 +1,10 @@
-
-
 import React from 'react'
 import styled from 'styled-components';
 import MultiSelectFilter from "../components/FilterItems/multiSelectFilter";
 import SingleSelectFilter from "../components/FilterItems/singleSelectFilter";
 import RangeFilter from "../components/FilterItems/rangeFilter";
-import { Footer } from '../components/footer';
-import { NavigationBar } from '../components/navbar';
+import {Footer} from '../components/footer';
+import {NavigationBar} from '../components/navbar';
 
 const Styles = styled.div`
     #matched-listings {
@@ -103,99 +101,98 @@ const Styles = styled.div`
     }
   `
 
-  class Listings extends React.Component {
+class Listings extends React.Component {
     render() {
-      return (
-        <Styles>
-            <NavigationBar/>
+        return (
+            <Styles>
+                <div className="row search-filter-area">
+                    <div className="col-lg-3 listings-filter">
 
 
-            <div className="row search-filter-area">
-                <div className="col-lg-3 listings-filter">
+                        <div className="row sort-area">
+                            <div className="col-lg-3"></div>
+                            <div className="col-lg-9 text-center sort-title">
+                                <h5 className="filter-text">Showing <span id="shown-listings">1</span> out of <span
+                                    id="matched-listings">1</span> Matches</h5>
+                            </div>
+                            <div className="col-lg-3"></div>
+                            <div className="col-lg-9 sort">
+                                <div className="row">
+                                    <div className="col-lg-1 sort-text">Sort:</div>
+                                    <div className="col-lg-10">
+                                        <form>
+                                            <div className="form-row">
+                                                <div className="form-group">
+                                                    <label className="sort-text" for="sort-distance">By Distance</label>
+                                                    <select id="sort-distance" className="form-control">
+                                                        <option selected>Select</option>
+                                                        <option>Highest to Lowest</option>
+                                                        <option>Lowest to Highest</option>
+                                                    </select>
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="sort-text" for="sort-year">By Year</label>
+                                                    <select id="sort-year" className="form-control">
+                                                        <option selected>Select</option>
+                                                        <option>Newest to Oldest</option>
+                                                        <option>Oldest to Newest</option>
+                                                    </select>
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="sort-text" for="sort-price">By Price</label>
+                                                    <select id="sort-price" className="form-control">
+                                                        <option selected>Select</option>
+                                                        <option>Highest to Lowest</option>
+                                                        <option>Lowest to Highest</option>
+                                                    </select>
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="sort-text" for="sort-date">By Date Listed</label>
+                                                    <select id="sort-date" className="form-control">
+                                                        <option selected>Select</option>
+                                                        <option>Newest to Oldest</option>
+                                                        <option>Oldest to Newest</option>
+                                                    </select>
+                                                </div>
+                                            </div>
 
-
-                <div className="row sort-area">
-                <div className="col-lg-3"></div>
-                <div className="col-lg-9 text-center sort-title">
-                    <h5 className="filter-text">Showing <span id="shown-listings">1</span> out of <span id="matched-listings">1</span> Matches</h5>
-                </div>
-                <div className="col-lg-3"></div>
-                <div className="col-lg-9 sort">
-                    <div className="row">
-                        <div className="col-lg-1 sort-text">Sort:</div>
-                        <div className="col-lg-10">
-                            <form>
-                                <div className="form-row">
-                                    <div className="form-group">
-                                        <label className="sort-text" for="sort-distance">By Distance</label>
-                                        <select id="sort-distance" className="form-control">
-                                            <option selected>Select</option>
-                                            <option>Highest to Lowest</option>
-                                            <option>Lowest to Highest</option>
-                                        </select>
-                                    </div>
-                                    <div className="form-group">
-                                        <label className="sort-text" for="sort-year">By Year</label>
-                                        <select id="sort-year" className="form-control">
-                                            <option selected>Select</option>
-                                            <option>Newest to Oldest</option>
-                                            <option>Oldest to Newest</option>
-                                        </select>
-                                    </div>
-                                    <div className="form-group">
-                                        <label className="sort-text" for="sort-price">By Price</label>
-                                        <select id="sort-price" className="form-control">
-                                            <option selected>Select</option>
-                                            <option>Highest to Lowest</option>
-                                            <option>Lowest to Highest</option>
-                                        </select>
-                                    </div>
-                                    <div className="form-group">
-                                        <label className="sort-text" for="sort-date">By Date Listed</label>
-                                        <select id="sort-date" className="form-control">
-                                            <option selected>Select</option>
-                                            <option>Newest to Oldest</option>
-                                            <option>Oldest to Newest</option>
-                                        </select>
+                                        </form>
                                     </div>
                                 </div>
-
-                            </form>
+                            </div>
                         </div>
+                        <div className="filter-item-title">
+                            <div className="filter-item-wrapper filter-margin">
+                                <span className="filter-text">Filter</span>
+                                <span className="filter-text right-span"><i className="fa fa-trash"></i> Search</span>
+                            </div>
+                        </div>
+                        <MultiSelectFilter className='location'/>
+                        <SingleSelectFilter className='keyword'/>
+                        <SingleSelectFilter className='type'/>
+                        <SingleSelectFilter className='make'/>
+                        <SingleSelectFilter className='model'/>
+                        <SingleSelectFilter className='trim'/>
+                        <RangeFilter className='price-range'/>
+                        <SingleSelectFilter className='usage'/>
+                        <SingleSelectFilter className='year'/>
+                        <SingleSelectFilter className='seller-type'/>
+                        <RangeFilter className='mile-range'/>
+                        <RangeFilter className='length-range'/>
+                        <SingleSelectFilter className='fuel-type'/>
+                        <RangeFilter className='weight-range'/>
+                        <RangeFilter className='sleep-range'/>
+                        <RangeFilter className='slides-range'/>
+                        <SingleSelectFilter className='state'/>
+                        <SingleSelectFilter className='city'/>
+
+
                     </div>
+
                 </div>
-            </div>
-            <div className="filter-item-title">
-                <div className="filter-item-wrapper filter-margin">
-                    <span className="filter-text">Filter</span>
-                    <span className="filter-text right-span"><i className="fa fa-trash"></i> Search</span>
-                </div>
-            </div>
-            <MultiSelectFilter className='location'/>
-            <SingleSelectFilter className='keyword'/>
-            <SingleSelectFilter className='type'/>
-            <SingleSelectFilter className='make'/>
-            <SingleSelectFilter className='model'/>
-            <SingleSelectFilter className='trim'/>
-            <RangeFilter className='price-range'/>
-            <SingleSelectFilter className='usage'/>
-            <SingleSelectFilter className='year'/>
-            <SingleSelectFilter className='seller-type'/>
-            <RangeFilter className='mile-range'/>
-            <RangeFilter className='length-range'/>
-            <SingleSelectFilter className='fuel-type'/>
-            <RangeFilter className='weight-range'/>
-            <RangeFilter className='sleep-range'/>
-            <RangeFilter className='slides-range'/>
-            <SingleSelectFilter className='state'/>
-            <SingleSelectFilter className='city'/>
-
-
-        </div>
-
-    </div>
-    <Footer/>
-    </Styles>
-)}}
+            </Styles>
+        )
+    }
+}
 
 export {Listings};

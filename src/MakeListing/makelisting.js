@@ -13,7 +13,6 @@ const MakeListing = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
                 <div className="container p-5">
                     <div className="text-center">
                         <h1>Sell a Horse</h1>
@@ -142,7 +141,6 @@ const MakeListing = () => {
                         </div>
                     </div>
                 </div>
-                <Footer/>
             </div>
 
         </Styles>

@@ -38,8 +38,6 @@ const ListingsDetails = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
-
                 <div className="container my-4">
                     <div className="row">
                         <div className="col-md-6 offset-md-1 my-4">
@@ -141,8 +139,6 @@ const ListingsDetails = () => {
                     </div>
 
                 </div>
-
-                <Footer/>
             </div>
         </Styles>
 

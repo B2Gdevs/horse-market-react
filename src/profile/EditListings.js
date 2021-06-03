@@ -25,7 +25,6 @@ const EditListing = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
                 <div className="container p-5">
                     <div className="text-center">
                         <h1>Edit Listing</h1>
@@ -160,7 +159,6 @@ const EditListing = () => {
                         </div>
                     </div>
                 </div>
-                <Footer/>
             </div>
 
         </Styles>

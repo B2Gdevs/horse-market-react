@@ -43,7 +43,6 @@ const ManageListing = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
                 <div className="d-flex">
                     <div style={{color: "gray"}} className="sidenav d-flex">
                         <div className="" style={{height: "700", width: "30%", backgroundColor: "#343A40"}}>
@@ -168,7 +167,6 @@ const ManageListing = () => {
                         </div>
                     </div>
                 </div>
-                <Footer/>
             </div>
         </Styles>
     );

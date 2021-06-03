@@ -46,7 +46,6 @@ const EditProfile = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
                 <div className="d-flex" style={{position: "relative", overflow: "auto"}}>
                     <div style={{color: "gray"}} className="sidenav d-flex">
                         <div className="" style={{height: "700", width: "30%", backgroundColor: "#343A40"}}>
@@ -127,7 +126,6 @@ const EditProfile = () => {
                         </div>
                     </div>
                 </div>
-                <Footer/>
             </div>
 
         </Styles>

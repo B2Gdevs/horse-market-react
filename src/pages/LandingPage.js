@@ -31,7 +31,6 @@ const LandingPage = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
                 <div className="d-flex" style={{position: "relative", overflow: "auto"}}>
                     <div style={{color: "white"}} className="sidenav p-4">
                         <form>
@@ -203,7 +202,7 @@ const LandingPage = () => {
                         </div>
                     </div>
                 </div>
-                <Footer/>
+
             </div>
         </Styles>
     );
@@ -211,33 +210,3 @@ const LandingPage = () => {
 
 export default LandingPage;
 
-
-// <NavigationBar/>
-//
-//      <div style={{position: 'absolute'}}>
-//          <div className="sidenav">
-//              <MultiSelectFilter class='location'/>
-//              <SingleSelectFilter class='keyword'/>
-//              <SingleSelectFilter class='type'/>
-//              <SingleSelectFilter class='make'/>
-//              <SingleSelectFilter class='model'/>
-//              <SingleSelectFilter class='trim'/>
-//              <RangeFilter class='price-range'/>
-//              <SingleSelectFilter class='usage'/>
-//              <SingleSelectFilter class='year'/>
-//              <SingleSelectFilter class='seller-type'/>
-//              <RangeFilter class='mile-range'/>
-//              <RangeFilter class='length-range'/>
-//              <SingleSelectFilter class='fuel-type'/>
-//              <RangeFilter class='weight-range'/>
-//              <RangeFilter class='sleep-range'/>
-//              <RangeFilter class='slides-range'/>
-//              <SingleSelectFilter class='state'/>
-//              <SingleSelectFilter class='city'/>
-//          </div>
-//          <div className="mainarea">
-//
-//          </div>
-//      </div>
-//
-//      <Footer/>

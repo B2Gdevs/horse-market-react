@@ -28,7 +28,6 @@ const BuyListing = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
                 <div className="container p-5">
 
                     <div className="text-center">
@@ -116,7 +115,6 @@ const BuyListing = () => {
                     </div>
 
                 </div>
-                <Footer/>
             </div>
 
         </Styles>

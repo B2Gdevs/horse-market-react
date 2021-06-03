@@ -114,8 +114,6 @@ const ListingsSearch = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
-
                 <div className="my-5">
                     <Slide>
                         <div className="each-slide">
@@ -325,8 +323,6 @@ const ListingsSearch = () => {
                         </div>
                     </div>
                 </div>
-
-                <Footer/>
             </div>
         </Styles>
 

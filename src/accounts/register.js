@@ -17,8 +17,6 @@ const Register = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
-
                 <div className="container p-5">
                     <div className="text-center">
                         <h1>Register</h1>
@@ -39,8 +37,6 @@ const Register = () => {
                         <button className={"btn btn-outline-dark"}>I already have an account</button>
                     </div>
                 </div>
-
-                <Footer/>
             </div>
         </Styles>
     )
