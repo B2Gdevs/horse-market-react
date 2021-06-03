@@ -33,7 +33,7 @@ const Register = () => {
                         <input className={"form-control mb-5"} placeholder={'password'}/>
                     </div>
                     <div className="row justify-content-center">
-                        <button className={"btn btn-outline-primary mr-4"}>Register</button>
+                        <button className={"btn btn-success mr-4"}>Register</button>
                         <button className={"btn btn-outline-dark"}>I already have an account</button>
                     </div>
                 </div>
