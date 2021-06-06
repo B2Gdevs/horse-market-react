@@ -39,7 +39,9 @@ function App() {
 
                     <Route exact path="/listings-details" component={ListingsDetails}/>
                     <Route exact path="/listings-search" component={ListingsSearch}/>
-                    
+
+                    {/* <Route exact path="/about" component={About}/>
+          <Route component={error_404}/> */}
                 </Switch>
                 <Footer/>
             </Router>

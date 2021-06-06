@@ -8,6 +8,7 @@ import horse1 from '../assets/horse1.jpg';
 import horse2 from '../assets/horse2.jpg';
 import horse3 from '../assets/horse3.jpeg';
 import horse4 from '../assets/horse4.jpg';
+import {Link} from "react-router-dom";
 
 
 const Styles = styled.div`
@@ -90,110 +91,119 @@ const LandingPage = () => {
                                     <Slide>
                                         <div className="each-slide">
                                             <div className='row justify-content-center'>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse1} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p style={{color: "green"}}>$ 100</p>
                                                         <p>2 year old stud!</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                </Link>
+
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse2} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p>$ 100</p>
                                                         <p>2 year old Mare</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                </Link>
+
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse3} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p>$ 100</p>
                                                         <p>100k Winning Stud</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                </Link>
+
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse4} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p>$ 100</p>
                                                         <p>100k Wining Mare</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
+                                                </Link>
                                             </div>
                                         </div>
                                         <div className="each-slide">
                                             <div className='row justify-content-center'>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse1} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p style={{color: "green"}}>$ 100</p>
                                                         <p>2 year old stud!</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                </Link>
+
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse2} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p>$ 100</p>
                                                         <p>2 year old Mare</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                </Link>
+
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse3} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p>$ 100</p>
                                                         <p>100k Winning Stud</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                </Link>
+
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse4} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p>$ 100</p>
                                                         <p>100k Wining Mare</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
+                                                </Link>
                                             </div>
                                         </div>
                                         <div className="each-slide">
                                             <div className='row justify-content-center'>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse1} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p style={{color: "green"}}>$ 100</p>
                                                         <p>2 year old stud!</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                </Link>
+
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse2} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p>$ 100</p>
                                                         <p>2 year old Mare</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                </Link>
+
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse3} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p>$ 100</p>
                                                         <p>100k Winning Stud</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
-                                                <div className="card shadow col-md-2 mx-5">
+                                                </Link>
+
+                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
                                                     <img className="px-1 py-3" src={horse4} alt={"img"}/>
                                                     <div className="p-1">
                                                         <p>$ 100</p>
                                                         <p>100k Wining Mare</p>
                                                         <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
                                                     </div>
-                                                </div>
+                                                </Link>
                                             </div>
                                         </div>
                                     </Slide>
