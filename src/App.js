@@ -30,7 +30,6 @@ function App() {
 
                     <Route exact path="/make-listing" component={MakeListing}/>
                     <Route exact path="/subscription-page" component={SubscriptionPage}/>
-
                     <Route exact path="/buy-listing" component={BuyListing}/>
 
                     <Route exact path="/edit-profile" component={EditProfile}/>

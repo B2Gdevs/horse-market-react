@@ -12,6 +12,15 @@ const Styles = styled.div`
    .remove-button {
         color: red
    }
+   .breadcrumb-text {
+        color: #5A9AD6;
+   }
+   .progress-bar {
+        width: 33.3%
+   }
+   .progress {
+        height: 5px
+   }   
 `
 
 const MakeListing = () => {
@@ -134,6 +143,28 @@ const MakeListing = () => {
     return (
         <Styles>
             <div className="">
+
+                <div className="row mt-5">
+                    <div className="col-md-6 offset-md-3 text-center">
+                        <div className="progress">
+                            <div className="progress-bar" role="progressbar"
+                                 aria-valuenow="25"
+                                 aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-4 breadcrumb-text">
+                                Create a Listing
+                            </div>
+                            <div className="col-md-4 breadcrumb-text">
+                                Subscription
+                            </div>
+                            <div className="col-md-4 breadcrumb-text">
+                                Checkout
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="container p-5">
                     <div className="text-center">
                         <h1>Sell a Horse</h1>
@@ -148,21 +179,35 @@ const MakeListing = () => {
                         <div className="row">
                             <div className="col-md-6">
                                 <label>Your Name</label>
-                                <input onChange={(e) => {setNameChange(e)}} placeholder={"Your name"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setNameChange(e)
+                                }} placeholder={"Your name"} className={"form-control"}/>
                                 <label>Your Email</label>
-                                <input onChange={(e) => {setEmailChange(e)}} placeholder={"Your email"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setEmailChange(e)
+                                }} placeholder={"Your email"} className={"form-control"}/>
                                 <label>Your Address</label>
-                                <input onChange={(e) => {setAddressChange(e)}} placeholder={"Your address"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setAddressChange(e)
+                                }} placeholder={"Your address"} className={"form-control"}/>
                                 <label>City</label>
-                                <input onChange={(e) => {setCityChange(e)}} placeholder={"city"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setCityChange(e)
+                                }} placeholder={"city"} className={"form-control"}/>
                             </div>
                             <div className="col-md-6">
                                 <label>State</label>
-                                <input onChange={(e) => {setStateChange(e)}} placeholder={"State"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setStateChange(e)
+                                }} placeholder={"State"} className={"form-control"}/>
                                 <label>Zip</label>
-                                <input onChange={(e) => {setZipChange(e)}} placeholder={"zip"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setZipChange(e)
+                                }} placeholder={"zip"} className={"form-control"}/>
                                 <label>Phone</label>
-                                <input onChange={(e) => {setPhoneChange(e)}} placeholder={"Phone"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setPhoneChange(e)
+                                }} placeholder={"Phone"} className={"form-control"}/>
                             </div>
                         </div>
                     </div>
@@ -171,21 +216,33 @@ const MakeListing = () => {
                         <div className="text-center">
                             <h2>Horse Information</h2>
                             <p>Listing Title</p>
-                            <input onChange={(e) => {setTitleChange(e)}} placeholder={"Headline"} className={"form-control w-50 mx-auto"}/>
+                            <input onChange={(e) => {
+                                setTitleChange(e)
+                            }} placeholder={"Headline"} className={"form-control w-50 mx-auto"}/>
                         </div>
 
                         <div className="row">
                             <div className="col-md-6">
                                 <label>Horse Name</label>
-                                <input onChange={(e) => {setHorseNameChange(e)}} placeholder={"Horse name"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setHorseNameChange(e)
+                                }} placeholder={"Horse name"} className={"form-control"}/>
                                 <label>Age</label>
-                                <input onChange={(e) => {setHorseAgeChange(e)}} placeholder={"Age"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setHorseAgeChange(e)
+                                }} placeholder={"Age"} className={"form-control"}/>
                                 <label>Sex</label>
-                                <input onChange={(e) => {setHorseSexChange(e)}} placeholder={"Sex"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setHorseSexChange(e)
+                                }} placeholder={"Sex"} className={"form-control"}/>
                                 <label>Height</label>
-                                <input onChange={(e) => {setHorseHeightChange(e)}} placeholder={"Height"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setHorseHeightChange(e)
+                                }} placeholder={"Height"} className={"form-control"}/>
                                 <label>Color</label>
-                                <input onChange={(e) => {setHorseColorChange(e)}} placeholder={"Color"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setHorseColorChange(e)
+                                }} placeholder={"Color"} className={"form-control"}/>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-check">
@@ -195,15 +252,21 @@ const MakeListing = () => {
                                     </label>
                                 </div>
                                 <label>Sex</label>
-                                <input onChange={(e) => {setHorseSexChange(e)}} placeholder={"sex"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setHorseSexChange(e)
+                                }} placeholder={"sex"} className={"form-control"}/>
                                 <label>Price</label>
-                                <input onChange={(e) => {setHorsePriceChange(e)}} placeholder={"price"} className={"form-control"}/>
+                                <input onChange={(e) => {
+                                    setHorsePriceChange(e)
+                                }} placeholder={"price"} className={"form-control"}/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md-12">
                                 <label>Horse Description</label>
-                                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea onChange={(e) => {
+                                    setHorseDescChange(e)
+                                }} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                         </div>
                     </div>

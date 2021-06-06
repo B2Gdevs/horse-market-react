@@ -6,7 +6,15 @@ import {Modal} from "antd";
 import 'antd/dist/antd.css';
 
 const Styles = styled.div`
-
+   .breadcrumb-text {
+        color: #5A9AD6;
+   }
+   .progress-bar {
+        width: 66.6%
+   }
+   .progress {
+        height: 5px
+   }    
 `
 
 const BuyListing = () => {
@@ -28,6 +36,26 @@ const BuyListing = () => {
     return (
         <Styles>
             <div className="">
+                <div className="row mt-5">
+                    <div className="col-md-6 offset-md-3 text-center">
+                        <div className="progress">
+                            <div className="progress-bar" role="progressbar"
+                                 aria-valuenow="25"
+                                 aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-4 breadcrumb-text">
+                                Create a Listing
+                            </div>
+                            <div className="col-md-4 breadcrumb-text">
+                                Subscription
+                            </div>
+                            <div className="col-md-4 breadcrumb-text">
+                                Checkout
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="container p-5">
 
                     <div className="text-center">
