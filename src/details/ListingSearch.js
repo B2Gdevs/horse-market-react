@@ -269,7 +269,7 @@ const ListingsSearch = () => {
                 </div>
 
                 <div className="my-5 container">
-                    <div className="row g-0">
+                    <div className="row">
                         <div className="col-md-3 mt-auto mb-3" style={{margin: 0, padding: 0}}>
                             <div className="">
                                 <div className="filter-item-title">
@@ -279,12 +279,14 @@ const ListingsSearch = () => {
                                             className="fa fa-trash"></i> Search</span>
                                     </div>
                                 </div>
-                                <MultiSelectFilter className='location'/>
-                                <SingleSelectFilter className='keyword'/>
-                                <SingleSelectFilter className='type'/>
-                                <SingleSelectFilter className='make'/>
-                                <SingleSelectFilter className='model'/>
-                                <SingleSelectFilter className='trim'/>
+                                <SingleSelectFilter className='keyword' keyWord={"keyword-collapse-1"} name={"Location"}/>
+                                <SingleSelectFilter className='keyword' keyWord={"keyword-collapse-2"} name={"Dam"}/>
+                                <SingleSelectFilter className='type' keyWord={"keyword-collapse-3"} name={"Sire"}/>
+                                <SingleSelectFilter className='make' keyWord={"keyword-collapse-4"} name={"Age"}/>
+                                <SingleSelectFilter className='model' keyWord={"keyword-collapse-5"} name={"Sex"}/>
+                                <SingleSelectFilter className='trim' keyWord={"keyword-collapse-6"} name={"Price"}/>
+                                <SingleSelectFilter className='model' keyWord={"keyword-collapse-7"} name={"Discipline"}/>
+                                <SingleSelectFilter className='trim' keyWord={"keyword-collapse-8"} name={"Breading Capable"}/>
                             </div>
                         </div>
                         <div className="col-md-9" style={{margin: 0, padding: 0}}>
