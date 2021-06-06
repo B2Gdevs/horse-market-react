@@ -14,6 +14,7 @@ import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai';
 import {HiLocationMarker} from 'react-icons/hi';
 import MultiSelectFilter from "../components/FilterItems/multiSelectFilter";
 import SingleSelectFilter from "../components/FilterItems/singleSelectFilter";
+import SlideData from "./SlideData";
 
 const Styles = styled.div`
     #matched-listings {
@@ -133,22 +134,26 @@ const ListingsSearch = () => {
         {
             image: horse1,
             desc: "2 year old stud!",
-            location: "Private Seller - 9 mi"
+            location: "Private Seller - 9 mi",
+            price: "$ 29"
         },
         {
-            image: horse1,
+            image: horse2,
             desc: "2 year old stud!",
-            location: "Private Seller - 9 mi"
+            location: "Private Seller - 9 mi",
+            price: "$ 29"
         }
         , {
-            image: horse1,
+            image: horse3,
             desc: "2 year old stud!",
-            location: "Private Seller - 9 mi"
+            location: "Private Seller - 9 mi",
+            price: "$ 29"
         }
         , {
-            image: horse1,
+            image: horse4,
             desc: "2 year old stud!",
-            location: "Private Seller - 9 mi"
+            location: "Private Seller - 9 mi",
+            price: "$ 29"
         }
     ]
 
@@ -157,114 +162,9 @@ const ListingsSearch = () => {
             <div className="">
                 <div className="my-5">
                     <Slide>
-                        <div className="each-slide">
-                            <div className='row justify-content-center'>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse1} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p style={{color: "green"}}>$ 100</p>
-                                        <p>2 year old stud!</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse2} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p>$ 100</p>
-                                        <p>2 year old Mare</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse3} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p>$ 100</p>
-                                        <p>100k Winning Stud</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse4} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p>$ 100</p>
-                                        <p>100k Wining Mare</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="each-slide">
-                            <div className='row justify-content-center'>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse1} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p style={{color: "green"}}>$ 100</p>
-                                        <p>2 year old stud!</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse2} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p>$ 100</p>
-                                        <p>2 year old Mare</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse3} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p>$ 100</p>
-                                        <p>100k Winning Stud</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse4} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p>$ 100</p>
-                                        <p>100k Wining Mare</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="each-slide">
-                            <div className='row justify-content-center'>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse1} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p style={{color: "green"}}>$ 100</p>
-                                        <p>2 year old stud!</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse2} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p>$ 100</p>
-                                        <p>2 year old Mare</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse3} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p>$ 100</p>
-                                        <p>100k Winning Stud</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                                <div className="card shadow col-md-2 mx-5">
-                                    <img className="px-1 py-3" src={horse4} alt={"img"}/>
-                                    <div className="p-1">
-                                        <p>$ 100</p>
-                                        <p>100k Wining Mare</p>
-                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <SlideData horseData={horseData} />
+                        <SlideData horseData={horseData} />
+                        <SlideData horseData={horseData} />
                     </Slide>
                 </div>
 
