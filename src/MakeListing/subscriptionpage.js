@@ -26,7 +26,10 @@ const Styles = styled.div`
    }
    .progress {
         height: 5px
-   }    
+   }   
+   .buy-listing-link {
+        text-decoration: none;
+   } 
 `
 
 const SubscriptionPage = () => {
@@ -67,7 +70,7 @@ const SubscriptionPage = () => {
                                 <ul className="list-group mt-4">
                                     <li className="list-group-item">6 Photos</li>
                                     <li className="list-group-item">Basic Listing feature</li>
-                                    <a href={"/buy-listing"} style={{textDecoration: "none"}}>
+                                    <a href={"/buy-listing"} className={"buy-listing-link"}>
                                         <li className="list-group-item choose-plan">Choose Plan
                                         </li>
                                     </a>
@@ -88,7 +91,7 @@ const SubscriptionPage = () => {
                                     <li className="list-group-item">Youtube video link space</li>
                                     <li className="list-group-item">10 Photos</li>
                                     <li className="list-group-item">Basic listing features</li>
-                                    <a href={"/buy-listing"} style={{textDecoration: "none"}}>
+                                    <a href={"/buy-listing"} className={"buy-listing-link"}>
                                         <li className="list-group-item choose-plan">Choose Plan
                                         </li>
                                     </a>
@@ -110,7 +113,7 @@ const SubscriptionPage = () => {
                                     <li className="list-group-item">Multiple Youtube Video Link Space</li>
                                     <li className="list-group-item">20 Photos</li>
                                     <li className="list-group-item">Basic listing features</li>
-                                    <a href={"/buy-listing"} style={{textDecoration: "none"}}>
+                                    <a href={"/buy-listing"} className={"buy-listing-link"}>
                                         <li className="list-group-item choose-plan">Choose Plan
                                         </li>
                                     </a>

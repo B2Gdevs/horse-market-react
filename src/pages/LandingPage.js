@@ -9,6 +9,7 @@ import horse2 from '../assets/horse2.jpg';
 import horse3 from '../assets/horse3.jpeg';
 import horse4 from '../assets/horse4.jpg';
 import {Link} from "react-router-dom";
+import SlideData from "../details/SlideData";
 
 
 const Styles = styled.div`
@@ -18,6 +19,7 @@ const Styles = styled.div`
         width:20%;
         height:700px;
         overflow: auto;
+        color: white;
     }
     .mainarea {
         opacity:0.8;
@@ -25,15 +27,53 @@ const Styles = styled.div`
         height:700px;
         overflow: auto;
     }
+    .page-wrapper {
+        position : relative;
+        overflow: auto;
+    }
+    .top-section {
+        background-color: #E9ECEF;
+    }
+    .horse-heading {
+        font-weight: lighter;
+    }
+    .feature-listing-heading {
+        color: #348824;
+    }
 `
 
 const LandingPage = () => {
-
+    const horseData = [
+        {
+            image: horse1,
+            desc: "2 year old stud!",
+            location: "Private Seller - 9 mi",
+            price: "$ 29"
+        },
+        {
+            image: horse2,
+            desc: "2 year old stud!",
+            location: "Private Seller - 9 mi",
+            price: "$ 29"
+        }
+        , {
+            image: horse3,
+            desc: "2 year old stud!",
+            location: "Private Seller - 9 mi",
+            price: "$ 29"
+        }
+        , {
+            image: horse4,
+            desc: "2 year old stud!",
+            location: "Private Seller - 9 mi",
+            price: "$ 29"
+        }
+    ]
     return (
         <Styles>
             <div className="">
-                <div className="d-flex" style={{position: "relative", overflow: "auto"}}>
-                    <div style={{color: "white"}} className="sidenav p-4">
+                <div className="d-flex page-wrapper">
+                    <div className="sidenav p-4">
                         <form>
                             <label>Horse Type</label>
                             <select className="form-control horse-type" id="horse-type"
@@ -70,10 +110,10 @@ const LandingPage = () => {
 
                     </div>
                     <div className="mainarea">
-                        <div className="p-5" style={{backgroundColor: "#E9ECEF"}}>
+                        <div className="p-5 top-section">
                             <div className="row">
                                 <div className="col-md-12">
-                                    <h1 style={{fontWeight: "lighter"}}>Horse Market</h1>
+                                    <h1 className={"horse-heading"}>Horse Market</h1>
                                 </div>
 
                                 <div className="col-md-12">
@@ -85,127 +125,13 @@ const LandingPage = () => {
                         <div className="p-5">
                             <div className="row">
                                 <div className="col-md-12">
-                                    <h4 style={{color: "#348824"}}>Featured Listings</h4>
+                                    <h4 className={"feature-listing-heading"}>Featured Listings</h4>
                                 </div>
                                 <div className="col-md-12">
                                     <Slide>
-                                        <div className="each-slide">
-                                            <div className='row justify-content-center'>
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse1} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p style={{color: "green"}}>$ 100</p>
-                                                        <p>2 year old stud!</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse2} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p>$ 100</p>
-                                                        <p>2 year old Mare</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse3} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p>$ 100</p>
-                                                        <p>100k Winning Stud</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse4} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p>$ 100</p>
-                                                        <p>100k Wining Mare</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                        <div className="each-slide">
-                                            <div className='row justify-content-center'>
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse1} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p style={{color: "green"}}>$ 100</p>
-                                                        <p>2 year old stud!</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse2} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p>$ 100</p>
-                                                        <p>2 year old Mare</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse3} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p>$ 100</p>
-                                                        <p>100k Winning Stud</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse4} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p>$ 100</p>
-                                                        <p>100k Wining Mare</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                        <div className="each-slide">
-                                            <div className='row justify-content-center'>
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse1} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p style={{color: "green"}}>$ 100</p>
-                                                        <p>2 year old stud!</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse2} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p>$ 100</p>
-                                                        <p>2 year old Mare</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse3} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p>$ 100</p>
-                                                        <p>100k Winning Stud</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-
-                                                <Link className="card shadow col-md-2 mx-5" to={"/listings-details"}>
-                                                    <img className="px-1 py-3" src={horse4} alt={"img"}/>
-                                                    <div className="p-1">
-                                                        <p>$ 100</p>
-                                                        <p>100k Wining Mare</p>
-                                                        <p style={{color: "#BABABC"}}>Private Seller - 9 mi</p>
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                        </div>
+                                        <SlideData horseData={horseData}/>
+                                        <SlideData horseData={horseData}/>
+                                        <SlideData horseData={horseData}/>
                                     </Slide>
                                 </div>
                             </div>

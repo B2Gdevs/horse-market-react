@@ -126,6 +126,14 @@ const Styles = styled.div`
     .listing-content {
         background-color: white;
     }
+    .horse-section {
+        margin: 0;
+        padding: 0;
+    }
+    .search-section {
+        margin: 0;
+        padding: 0;        
+    }
   `
 const ListingsSearch = () => {
     const [liked, setLiked] = useState(false)
@@ -170,7 +178,7 @@ const ListingsSearch = () => {
 
                 <div className="my-5 container">
                     <div className="row">
-                        <div className="col-md-3 mt-auto mb-3" style={{margin: 0, padding: 0}}>
+                        <div className="col-md-3 mt-auto mb-3 search-section">
                             <div className="">
                                 <div className="filter-item-title">
                                     <div className="filter-item-wrapper filter-margin">
@@ -189,7 +197,7 @@ const ListingsSearch = () => {
                                 <SingleSelectFilter className='trim' keyWord={"keyword-collapse-8"} name={"Breading Capable"}/>
                             </div>
                         </div>
-                        <div className="col-md-9" style={{margin: 0, padding: 0}}>
+                        <div className="col-md-9 horse-section">
                             <div className="p-3">
                                 <div className="row p-3 matches">
                                     <div className="row mx-auto">
