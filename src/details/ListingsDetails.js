@@ -10,6 +10,7 @@ import {MdLocationOn} from 'react-icons/md';
 import {AiFillHeart} from 'react-icons/ai';
 import {AiOutlineMail} from 'react-icons/ai';
 import {Modal, Button} from 'antd';
+import {Carousel} from 'antd';
 import 'antd/dist/antd.css';
 
 const Styles = styled.div`
@@ -44,37 +45,42 @@ const ListingsDetails = () => {
         setIsModalVisible(false);
     };
 
+    const contentStyle = {
+        height: '160px',
+        color: '#fff',
+        lineHeight: '160px',
+        textAlign: 'center',
+        background: '#364d79',
+    };
 
     return (
         <Styles>
             <div className="">
                 <div className="container my-4">
                     <div className="row">
+
                         <div className="col-md-6 offset-md-1 my-4">
-                            <div id="carouselExampleControls" className="carousel slide slider mb-2"
-                                 data-ride="carousel">
-                                <div className="carousel-inner">
-                                    <div className="carousel-item active">
-                                        <img className="d-block w-100" src={horse1} alt={"img"}/>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img className="d-block w-100" src={horse1} alt={"img"}/>
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img className="d-block w-100" src={horse1} alt={"img"}/>
-                                    </div>
+                            <div className="row">
+                                <div className="col-md-12">
+
+                                    <Carousel autoplay>
+                                        <div>
+                                            <img className={"w-100"} src={horse1} />
+                                        </div>
+                                        <div>
+                                            <img className={"w-100"} src={horse1}/>
+                                        </div>
+                                        <div>
+                                            <img className={"w-100"} src={horse1} />
+                                        </div>
+                                        <div>
+                                            <img className={"w-100"} src={horse1} />
+                                        </div>
+                                    </Carousel>,
+
                                 </div>
-                                <a className="carousel-control-prev" href="#carouselExampleControls" role="button"
-                                   data-slide="prev">
-                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span className="sr-only">Previous</span>
-                                </a>
-                                <a className="carousel-control-next" href="#carouselExampleControls" role="button"
-                                   data-slide="next">
-                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span className="sr-only">Next</span>
-                                </a>
                             </div>
+
                             <div className="row my-5 pl-3 pr-5">
                                 <div className="mr-auto">
                                     <h5>Listing Heading</h5>
@@ -86,6 +92,7 @@ const ListingsDetails = () => {
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-md-4">
                             <div className="row">
                                 <div className="col-md-12">
