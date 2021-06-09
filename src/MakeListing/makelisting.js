@@ -3,6 +3,7 @@ import {NavigationBar} from "../components/navbar";
 import styled from "styled-components";
 import {Footer} from "../components/footer";
 import horse1 from "../assets/horse1.jpg";
+import {useInput} from '../input-hook';
 
 const Styles = styled.div`
    input[type="file"] {
@@ -44,100 +45,50 @@ const MakeListing = () => {
             image: horse1,
         }
     ]
-    const [name, setName] = useState('');
-    const setNameChange = (e) => {
-        console.log(e.target.value)
-        setName(e.target.value)
-    }
 
-    const [state, setState] = useState('');
-    const setStateChange = (e) => {
-        console.log(e.target.value)
-        setState(e.target.value)
-    }
+    const {value: name, bind: bindName, reset: resetName} = useInput('');
+    const {value: state, bind: bindState, reset: resetState} = useInput('');
 
-    const [email, setEmail] = useState('');
-    const setEmailChange = (e) => {
-        console.log(e.target.value)
-        setEmail(e.target.value)
-    }
+    const {value: email, bind: bindEmail, reset: resetEmail} = useInput('');
+    const {value: zip, bind: bindZip, reset: resetZip} = useInput('');
 
-    const [zip, setZip] = useState('');
-    const setZipChange = (e) => {
-        console.log(e.target.value)
-        setZip(e.target.value)
-    }
+    const {value: address, bind: bindAddress, reset: resetAddress} = useInput('');
+    const {value: phone, bind: bindPhone, reset: resetPhone} = useInput('');
 
-    const [address, setAddress] = useState('');
-    const setAddressChange = (e) => {
-        console.log(e.target.value)
-        setAddress(e.target.value)
-    }
+    const {value: city, bind: bindCity, reset: resetCity} = useInput('');
+    const {value: title, bind: bindTitle, reset: resetTitle} = useInput('');
 
-    const [phone, setPhone] = useState('');
-    const setPhoneChange = (e) => {
-        console.log(e.target.value)
-        setPhone(e.target.value)
-    }
+    const {value: horseName, bind: bindHorseName, reset: resetHorseName} = useInput('');
+    const {value: horseAge, bind: bindHorseAge, reset: resetHorseAge} = useInput('');
 
-    const [city, setCity] = useState('');
-    const setCityChange = (e) => {
-        console.log(e.target.value)
-        setCity(e.target.value)
-    }
+    const {value: horseSex, bind: bindHorseSex, reset: resetHorseSex} = useInput('');
+    const {value: horseHeight, bind: bindHorseHeight, reset: resetHorseHeight} = useInput('');
 
-    const [title, setTitle] = useState('');
-    const setTitleChange = (e) => {
-        console.log(e.target.value)
-        setTitle(e.target.value)
-    }
+    const {value: horsePrice, bind: bindHorsePrice, reset: resetHorsePrice} = useInput('');
+    const {value: horseColor, bind: bindHorseColor, reset: resetHorseColor} = useInput('');
 
-    const [horseName, setHorseName] = useState('');
-    const setHorseNameChange = (e) => {
-        console.log(e.target.value)
-        setHorseName(e.target.value)
-    }
+    const {value: horseDesc, bind: bindHorseDesc, reset: resetHorseDesc} = useInput('');
 
-    const [horseAge, setHorseAge] = useState('');
-    const setHorseAgeChange = (e) => {
-        console.log(e.target.value)
-        setHorseAge(e.target.value)
-    }
 
-    const [horseSex, setHorseSex] = useState('');
-    const setHorseSexChange = (e) => {
-        console.log(e.target.value)
-        setHorseSex(e.target.value)
-    }
-
-    const [horseHeight, setHorseHeight] = useState('');
-    const setHorseHeightChange = (e) => {
-        console.log(e.target.value)
-        setHorseHeight(e.target.value)
-    }
-
-    const [horsePrice, setPrice] = useState('');
-    const setHorsePriceChange = (e) => {
-        console.log(e.target.value)
-        setPrice(e.target.value)
-    }
-
-    const [horseColor, setColor] = useState('');
-    const setHorseColorChange = (e) => {
-        console.log(e.target.value)
-        setColor(e.target.value)
-    }
-
-    const [horseDesc, setHorseDesc] = useState('');
-    const setHorseDescChange = (e) => {
-        console.log(e.target.value)
-        setHorseDesc(e.target.value)
-    }
-
-    const create = () => {
+    const handleSubmit = () => {
         console.log("Captured info: ", name, state, email, zip, address, phone, city,
             title, horseName, horseAge, horseSex, horseHeight, horsePrice, horseColor,
             horseDesc)
+        resetName()
+        resetState()
+        resetEmail()
+        resetZip()
+        resetAddress()
+        resetPhone()
+        resetCity()
+        resetTitle()
+        resetHorseName()
+        resetHorseAge()
+        resetHorseSex()
+        resetHorseHeight()
+        resetHorsePrice()
+        resetHorseColor()
+        resetHorseDesc()
     }
 
     return (
@@ -179,35 +130,21 @@ const MakeListing = () => {
                         <div className="row">
                             <div className="col-md-6">
                                 <label>Your Name</label>
-                                <input onChange={(e) => {
-                                    setNameChange(e)
-                                }} placeholder={"Your name"} className={"form-control"}/>
+                                <input {...bindName} placeholder={"Your name"} className={"form-control"}/>
                                 <label>Your Email</label>
-                                <input onChange={(e) => {
-                                    setEmailChange(e)
-                                }} placeholder={"Your email"} className={"form-control"}/>
+                                <input {...bindEmail} placeholder={"Your email"} className={"form-control"}/>
                                 <label>Your Address</label>
-                                <input onChange={(e) => {
-                                    setAddressChange(e)
-                                }} placeholder={"Your address"} className={"form-control"}/>
+                                <input {...bindAddress} placeholder={"Your address"} className={"form-control"}/>
                                 <label>City</label>
-                                <input onChange={(e) => {
-                                    setCityChange(e)
-                                }} placeholder={"city"} className={"form-control"}/>
+                                <input {...bindCity} placeholder={"city"} className={"form-control"}/>
                             </div>
                             <div className="col-md-6">
                                 <label>State</label>
-                                <input onChange={(e) => {
-                                    setStateChange(e)
-                                }} placeholder={"State"} className={"form-control"}/>
+                                <input {...bindState} placeholder={"State"} className={"form-control"}/>
                                 <label>Zip</label>
-                                <input onChange={(e) => {
-                                    setZipChange(e)
-                                }} placeholder={"zip"} className={"form-control"}/>
+                                <input {...bindZip} placeholder={"zip"} className={"form-control"}/>
                                 <label>Phone</label>
-                                <input onChange={(e) => {
-                                    setPhoneChange(e)
-                                }} placeholder={"Phone"} className={"form-control"}/>
+                                <input {...bindPhone} placeholder={"Phone"} className={"form-control"}/>
                             </div>
                         </div>
                     </div>
@@ -216,33 +153,21 @@ const MakeListing = () => {
                         <div className="text-center">
                             <h2>Horse Information</h2>
                             <p>Listing Title</p>
-                            <input onChange={(e) => {
-                                setTitleChange(e)
-                            }} placeholder={"Headline"} className={"form-control w-50 mx-auto"}/>
+                            <input {...bindTitle} placeholder={"Headline"} className={"form-control w-50 mx-auto"}/>
                         </div>
 
                         <div className="row">
                             <div className="col-md-6">
                                 <label>Horse Name</label>
-                                <input onChange={(e) => {
-                                    setHorseNameChange(e)
-                                }} placeholder={"Horse name"} className={"form-control"}/>
+                                <input {...bindHorseName} placeholder={"Horse name"} className={"form-control"}/>
                                 <label>Age</label>
-                                <input onChange={(e) => {
-                                    setHorseAgeChange(e)
-                                }} placeholder={"Age"} className={"form-control"}/>
+                                <input {...bindHorseAge} placeholder={"Age"} className={"form-control"}/>
                                 <label>Sex</label>
-                                <input onChange={(e) => {
-                                    setHorseSexChange(e)
-                                }} placeholder={"Sex"} className={"form-control"}/>
+                                <input {...bindHorseSex} placeholder={"Sex"} className={"form-control"}/>
                                 <label>Height</label>
-                                <input onChange={(e) => {
-                                    setHorseHeightChange(e)
-                                }} placeholder={"Height"} className={"form-control"}/>
+                                <input {...bindHorseHeight} placeholder={"Height"} className={"form-control"}/>
                                 <label>Color</label>
-                                <input onChange={(e) => {
-                                    setHorseColorChange(e)
-                                }} placeholder={"Color"} className={"form-control"}/>
+                                <input {...bindHorseColor} placeholder={"Color"} className={"form-control"}/>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-check">
@@ -252,21 +177,15 @@ const MakeListing = () => {
                                     </label>
                                 </div>
                                 <label>Sex</label>
-                                <input onChange={(e) => {
-                                    setHorseSexChange(e)
-                                }} placeholder={"sex"} className={"form-control"}/>
+                                <input {...bindHorseSex} placeholder={"sex"} className={"form-control"}/>
                                 <label>Price</label>
-                                <input onChange={(e) => {
-                                    setHorsePriceChange(e)
-                                }} placeholder={"price"} className={"form-control"}/>
+                                <input {...bindHorsePrice} placeholder={"price"} className={"form-control"}/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md-12">
                                 <label>Horse Description</label>
-                                <textarea onChange={(e) => {
-                                    setHorseDescChange(e)
-                                }} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea {...bindHorseDesc} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
@@ -293,7 +212,7 @@ const MakeListing = () => {
                             ))}
                         </div>
                         <div className="row">
-                            <button onClick={create} className={"btn btn-outline-success mx-auto"}>Create</button>
+                            <button onClick={handleSubmit} className={"btn btn-outline-success mx-auto"}>Create</button>
                         </div>
                     </div>
                 </div>
