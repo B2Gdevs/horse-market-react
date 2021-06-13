@@ -7,6 +7,8 @@ import {Modal} from "antd";
 import avatar from '../assets/avatar.jpg'
 import computer from '../assets/computer.jpg'
 import list from '../assets/list.jpg'
+import {useInput} from "../input-hook";
+import ProfileSlider from "../components/ProfileSlider";
 
 const Styles = styled.div`
     .page-content {
@@ -52,8 +54,25 @@ const Styles = styled.div`
 const EditProfile = () => {
 
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const {value: name, bind: bindName, reset: resetName} = useInput('');
+    const {value: state, bind: bindState, reset: resetState} = useInput('');
+
+    const {value: email, bind: bindEmail, reset: resetEmail} = useInput('');
+    const {value: zip, bind: bindZip, reset: resetZip} = useInput('');
+    const {value: address, bind: bindAddress, reset: resetAddress} = useInput('');
+
+    const {value: phone, bind: bindPhone, reset: resetPhone} = useInput('');
+    const {value: city, bind: bindCity, reset: resetCity} = useInput('');
 
     const showModal = () => {
+        console.log("Captured Info: ", name, state, email, zip, address, phone, city)
+        resetName()
+        resetState()
+        resetEmail()
+        resetZip()
+        resetAddress()
+        resetPhone()
+        resetCity()
         setIsModalVisible(true);
     };
 
@@ -70,34 +89,7 @@ const EditProfile = () => {
         <Styles>
             <div className="">
                 <div className="d-flex page-content" style={{}}>
-                    <div className="sidenav d-flex">
-                        <div className="icon-col" style={{}}>
-                            <div className="row mt-4 ml-2">
-                                <div className="col-md-12">
-                                    <img className={"navbar-icons"} src={computer}/>
-                                </div>
-                                <div className="col-md-12 my-5">
-                                    <img className={"navbar-icons"} src={avatar}/>
-                                </div>
-                                <div className="col-md-12">
-                                    <img className={"navbar-icons"} src={list}/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="text-col" style={{}}>
-                            <div className="row mt-4 ml-2">
-                                <div className="col-md-12 side-bar-text">
-                                    <p className={"navbar-text"}>Dashboard</p>
-                                </div>
-                                <div className="col-md-12 my-5 side-bar-text">
-                                    <p className={"navbar-text"}>Edit Profile</p>
-                                </div>
-                                <div className="col-md-12 side-bar-text">
-                                    <p className={"navbar-text"}>Your Listings</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ProfileSlider />
                     <div className="mainarea pt-5">
                         <div className="container mt-5">
                             <div className="text-center">
@@ -112,26 +104,26 @@ const EditProfile = () => {
                                 <div className="row">
                                     <div className="col-md-6">
                                         <label>Your Name</label>
-                                        <input className={"form-control"} placeholder={"Your Name"}/>
+                                        <input {...bindName} className={"form-control"} placeholder={"Your Name"}/>
 
                                         <label>Email</label>
-                                        <input className={"form-control"} placeholder={"Email"}/>
+                                        <input {...bindEmail} className={"form-control"} placeholder={"Email"}/>
 
                                         <label>Your Address</label>
-                                        <input className={"form-control"} placeholder={"Your Address"}/>
+                                        <input {...bindAddress} className={"form-control"} placeholder={"Your Address"}/>
 
                                         <label>City</label>
-                                        <input className={"form-control"} placeholder={"City"}/>
+                                        <input {...bindCity} className={"form-control"} placeholder={"City"}/>
                                     </div>
                                     <div className="col-md-6">
                                         <label>State</label>
-                                        <input className={"form-control"} placeholder={"State"}/>
+                                        <input {...bindState} className={"form-control"} placeholder={"State"}/>
 
                                         <label>Zip</label>
-                                        <input className={"form-control"} placeholder={"Zip"}/>
+                                        <input {...bindZip} className={"form-control"} placeholder={"Zip"}/>
 
                                         <label>Phone</label>
-                                        <input className={"form-control"} placeholder={"Phone"}/>
+                                        <input {...bindPhone} className={"form-control"} placeholder={"Phone"}/>
                                     </div>
                                 </div>
                                 <div className="row my-3">

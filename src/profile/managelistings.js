@@ -7,6 +7,7 @@ import {Modal} from "antd";
 import computer from "../assets/computer.jpg";
 import avatar from "../assets/avatar.jpg";
 import list from "../assets/list.jpg";
+import ProfileSlider from "../components/ProfileSlider";
 
 const Styles = styled.div`
     .sidenav {
@@ -70,55 +71,30 @@ const ManageListing = () => {
     const content = [
         {
             image: horse1,
-            text1: "Cras justo odio",
-            text2: "Dapibus ac facilisis in",
-            text3: "Morbi leo risus",
+            title: "Cras justo odio",
+            listingType: "Dapibus ac facilisis in",
+            price: "Morbi leo risus",
         },
         {
             image: horse1,
-            text1: "Cras justo odio",
-            text2: "Dapibus ac facilisis in",
-            text3: "Morbi leo risus",
+            title: "Cras justo odio",
+            listingType: "Dapibus ac facilisis in",
+            price: "Morbi leo risus",
         },
         {
             image: horse1,
-            text1: "Cras justo odio",
-            text2: "Dapibus ac facilisis in",
-            text3: "Morbi leo risus",
+            title: "Cras justo odio",
+            listingType: "Dapibus ac facilisis in",
+            price: "Morbi leo risus",
         },
     ]
     return (
         <Styles>
             <div className="">
                 <div className="d-flex">
-                    <div className="sidenav d-flex">
-                        <div className="icon-col" style={{}}>
-                            <div className="row mt-4 ml-2">
-                                <div className="col-md-12">
-                                    <img className={"navbar-icons"} src={computer}/>
-                                </div>
-                                <div className="col-md-12 my-5">
-                                    <img className={"navbar-icons"} src={avatar}/>
-                                </div>
-                                <div className="col-md-12">
-                                    <img className={"navbar-icons"} src={list}/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="text-col" style={{}}>
-                            <div className="row mt-4 ml-2">
-                                <div className="col-md-12 side-bar-text">
-                                    <p className={"navbar-text"}>Dashboard</p>
-                                </div>
-                                <div className="col-md-12 my-5 side-bar-text">
-                                    <p className={"navbar-text"}>Edit Profile</p>
-                                </div>
-                                <div className="col-md-12 side-bar-text">
-                                    <p className={"navbar-text"}>Your Listings</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <ProfileSlider />
+
                     <div className="mainarea pt-5">
                         <div className="container my-5">
                             <div className="text-center">
@@ -144,9 +120,9 @@ const ManageListing = () => {
                                         <div className="card shadow">
                                             <img className="px-1 py-3" src={data.image} alt={"img"}/>
                                             <ul className="list-group">
-                                                <li className="list-group-item">{data.text1}</li>
-                                                <li className="list-group-item">{data.text2}</li>
-                                                <li className="list-group-item">{data.text3}</li>
+                                                <li className="list-group-item">{data.title}</li>
+                                                <li className="list-group-item">{data.listingType}</li>
+                                                <li className="list-group-item">{data.price}</li>
                                                 <li className="list-group-item">
                                                     <div className="row">
                                                         <div className="col-md-6 text-center border-right">

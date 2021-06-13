@@ -39,8 +39,27 @@ const EditListing = () => {
     const {value: horseDesc, bind: bindHorseDesc, reset: resetHorseDesc} = useInput('');
 
 
-
     const showModal = () => {
+
+        console.log("Captured info: ", name, state, email, zip, address, phone, city,
+            title, horseName, horseAge, horseSex, horseHeight, horsePrice, horseColor,
+            horseDesc)
+        resetName()
+        resetState()
+        resetEmail()
+        resetZip()
+        resetAddress()
+        resetPhone()
+        resetCity()
+        resetTitle()
+        resetHorseName()
+        resetHorseAge()
+        resetHorseSex()
+        resetHorseHeight()
+        resetHorsePrice()
+        resetHorseColor()
+        resetHorseDesc()
+
         setIsModalVisible(true);
     };
 
@@ -87,7 +106,7 @@ const EditListing = () => {
 
                         <div className="row">
                             <div className="col-md-6">
-                            <label>Your Name</label>
+                                <label>Your Name</label>
                                 <input {...bindName} placeholder={"Your name"} className={"form-control"}/>
                                 <label>Your Email</label>
                                 <input {...bindEmail} placeholder={"Your email"} className={"form-control"}/>
@@ -97,7 +116,7 @@ const EditListing = () => {
                                 <input {...bindCity} placeholder={"city"} className={"form-control"}/>
                             </div>
                             <div className="col-md-6">
-                                 <label>State</label>
+                                <label>State</label>
                                 <input {...bindState} placeholder={"State"} className={"form-control"}/>
                                 <label>Zip</label>
                                 <input {...bindZip} placeholder={"zip"} className={"form-control"}/>
@@ -116,7 +135,7 @@ const EditListing = () => {
 
                         <div className="row">
                             <div className="col-md-6">
-                            <label>Horse Name</label>
+                                <label>Horse Name</label>
                                 <input {...bindHorseName} placeholder={"Horse name"} className={"form-control"}/>
                                 <label>Age</label>
                                 <input {...bindHorseAge} placeholder={"Age"} className={"form-control"}/>
@@ -142,8 +161,9 @@ const EditListing = () => {
                         </div>
                         <div className="row">
                             <div className="col-md-12">
-                            <label>Horse Description</label>
-                                <textarea {...bindHorseDesc} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label>Horse Description</label>
+                                <textarea {...bindHorseDesc} className="form-control" id="exampleFormControlTextarea1"
+                                          rows="3"></textarea>
                             </div>
                         </div>
                     </div>

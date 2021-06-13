@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {Footer} from "../components/footer";
 import horse1 from "../assets/horse1.jpg";
 import {useInput} from '../input-hook';
+import {useHistory} from "react-router";
 
 const Styles = styled.div`
    input[type="file"] {
@@ -46,6 +47,15 @@ const MakeListing = () => {
         }
     ]
 
+    const listingData = {
+        "AmountDueToday" : "1.00",
+        "SubscriptionSubtotal" : "1.00",
+        "Shipping" : "1.00",
+        "PromosAndDiscount" : "1.00",
+        "SalesTax" : "1.00",
+        "NextBillingDate" : "1.00",
+    }
+    let history = useHistory();
     const {value: name, bind: bindName, reset: resetName} = useInput('');
     const {value: state, bind: bindState, reset: resetState} = useInput('');
 
@@ -89,6 +99,11 @@ const MakeListing = () => {
         resetHorsePrice()
         resetHorseColor()
         resetHorseDesc()
+
+        history.push({
+           pathname: '/buy-listing',
+           state: { listingData: listingData }
+       });
     }
 
     return (

@@ -1,7 +1,5 @@
 import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Home from './pages/home';
-import {Listings} from './pages/listings';
 import LandingPage from "./pages/LandingPage";
 import Login from "./accounts/login";
 import Register from "./accounts/register";

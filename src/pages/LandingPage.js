@@ -69,6 +69,15 @@ const LandingPage = () => {
             price: "$ 29"
         }
     ]
+
+    function Slides({horseData, pagination}) {
+        console.log('uass')
+        let slideCode = []
+        for(let i=0; i<Math.ceil(horseData.length/pagination); i=i+pagination) {
+            slideCode.push(<SlideData horseData={horseData.slice(i, i+pagination)}/>)
+        }
+        return slideCode
+    }
     return (
         <Styles>
             <div className="">
@@ -129,9 +138,7 @@ const LandingPage = () => {
                                 </div>
                                 <div className="col-md-12">
                                     <Slide>
-                                        <SlideData horseData={horseData}/>
-                                        <SlideData horseData={horseData}/>
-                                        <SlideData horseData={horseData}/>
+                                        <Slides horseData={horseData} pagination={2} />
                                     </Slide>
                                 </div>
                             </div>
