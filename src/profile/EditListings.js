@@ -4,6 +4,8 @@ import styled from "styled-components";
 import {Footer} from "../components/footer";
 import horse1 from "../assets/horse1.jpg";
 import {Modal} from "antd";
+import {useInput} from '../input-hook';
+
 
 const Styles = styled.div`
    .remove-button {
@@ -12,6 +14,31 @@ const Styles = styled.div`
 `
 const EditListing = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const {value: name, bind: bindName, reset: resetName} = useInput('');
+    const {value: state, bind: bindState, reset: resetState} = useInput('');
+
+    const {value: email, bind: bindEmail, reset: resetEmail} = useInput('');
+    const {value: zip, bind: bindZip, reset: resetZip} = useInput('');
+
+    const {value: address, bind: bindAddress, reset: resetAddress} = useInput('');
+    const {value: phone, bind: bindPhone, reset: resetPhone} = useInput('');
+
+    const {value: city, bind: bindCity, reset: resetCity} = useInput('');
+    const {value: title, bind: bindTitle, reset: resetTitle} = useInput('');
+
+    const {value: horseName, bind: bindHorseName, reset: resetHorseName} = useInput('');
+    const {value: horseAge, bind: bindHorseAge, reset: resetHorseAge} = useInput('');
+
+    const {value: horseSex, bind: bindHorseSex, reset: resetHorseSex} = useInput('');
+    const {value: horseHeight, bind: bindHorseHeight, reset: resetHorseHeight} = useInput('');
+
+    const {value: horsePrice, bind: bindHorsePrice, reset: resetHorsePrice} = useInput('');
+    const {value: horseColor, bind: bindHorseColor, reset: resetHorseColor} = useInput('');
+
+    const {value: horseDesc, bind: bindHorseDesc, reset: resetHorseDesc} = useInput('');
+
+
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -60,22 +87,22 @@ const EditListing = () => {
 
                         <div className="row">
                             <div className="col-md-6">
-                                <label>Your Name</label>
-                                <input placeholder={"Your name"} className={"form-control"}/>
+                            <label>Your Name</label>
+                                <input {...bindName} placeholder={"Your name"} className={"form-control"}/>
                                 <label>Your Email</label>
-                                <input placeholder={"Your email"} className={"form-control"}/>
+                                <input {...bindEmail} placeholder={"Your email"} className={"form-control"}/>
                                 <label>Your Address</label>
-                                <input placeholder={"Your address"} className={"form-control"}/>
+                                <input {...bindAddress} placeholder={"Your address"} className={"form-control"}/>
                                 <label>City</label>
-                                <input placeholder={"city"} className={"form-control"}/>
+                                <input {...bindCity} placeholder={"city"} className={"form-control"}/>
                             </div>
                             <div className="col-md-6">
-                                <label>State</label>
-                                <input placeholder={"State"} className={"form-control"}/>
+                                 <label>State</label>
+                                <input {...bindState} placeholder={"State"} className={"form-control"}/>
                                 <label>Zip</label>
-                                <input placeholder={"zip"} className={"form-control"}/>
+                                <input {...bindZip} placeholder={"zip"} className={"form-control"}/>
                                 <label>Phone</label>
-                                <input placeholder={"Phone"} className={"form-control"}/>
+                                <input {...bindPhone} placeholder={"Phone"} className={"form-control"}/>
                             </div>
                         </div>
                     </div>
@@ -84,21 +111,21 @@ const EditListing = () => {
                         <div className="text-center">
                             <h2>Horse Information</h2>
                             <p>Listing Title</p>
-                            <input placeholder={"Headline"} className={"form-control w-50 mx-auto"}/>
+                            <input {...bindTitle} placeholder={"Headline"} className={"form-control w-50 mx-auto"}/>
                         </div>
 
                         <div className="row">
                             <div className="col-md-6">
-                                <label>Horse Name</label>
-                                <input placeholder={"Horse name"} className={"form-control"}/>
+                            <label>Horse Name</label>
+                                <input {...bindHorseName} placeholder={"Horse name"} className={"form-control"}/>
                                 <label>Age</label>
-                                <input placeholder={"Age"} className={"form-control"}/>
+                                <input {...bindHorseAge} placeholder={"Age"} className={"form-control"}/>
                                 <label>Sex</label>
-                                <input placeholder={"Sex"} className={"form-control"}/>
+                                <input {...bindHorseSex} placeholder={"Sex"} className={"form-control"}/>
                                 <label>Height</label>
-                                <input placeholder={"Height"} className={"form-control"}/>
+                                <input {...bindHorseHeight} placeholder={"Height"} className={"form-control"}/>
                                 <label>Color</label>
-                                <input placeholder={"Color"} className={"form-control"}/>
+                                <input {...bindHorseColor} placeholder={"Color"} className={"form-control"}/>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-check">
@@ -107,18 +134,16 @@ const EditListing = () => {
                                         Horse is registered
                                     </label>
                                 </div>
-                                <label>Age</label>
-                                <input placeholder={"age"} className={"form-control"}/>
                                 <label>Sex</label>
-                                <input placeholder={"sex"} className={"form-control"}/>
+                                <input {...bindHorseSex} placeholder={"sex"} className={"form-control"}/>
                                 <label>Price</label>
-                                <input placeholder={"price"} className={"form-control"}/>
+                                <input {...bindHorsePrice} placeholder={"price"} className={"form-control"}/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md-12">
-                                <label>Horse Description</label>
-                                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label>Horse Description</label>
+                                <textarea {...bindHorseDesc} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
