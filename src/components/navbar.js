@@ -1,21 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ReactVivus from 'react-vivus';
 import styled from 'styled-components';
 import svg from '../assets/RV_Market_Logo.svg';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 
 // Logo
 const Logo = () => (
-  <ReactVivus
-    id="logo"
-    option={{
-      file: svg,
-      type: 'delayed',
-      animTimingFunction: 'EASE',
-      duration: 250
-    }}
-  />
+    <ReactVivus
+        id="logo"
+        option={{
+            file: svg,
+            type: 'delayed',
+            animTimingFunction: 'EASE',
+            duration: 250
+        }}
+    />
 );
 
 const Styles = styled.div`
@@ -82,42 +82,44 @@ const Styles = styled.div`
 
 
 const NavigationBar = () => {
-  return (
-    <Styles>
-        <nav className="navbar navbar-expand-lg navbar-dark outline">
+    let location = useLocation();
+    return (
+        <Styles>
+            <nav className="navbar navbar-expand-lg navbar-dark outline">
 
-            <h3 style={{color: "white"}}>logoipsum</h3>
+                <h3 style={{color: "white"}}>logoipsum</h3>
 
-         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-        </button>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
 
-        <div className="collapse navbar-collapse ml-5" id="navbarNav">
-            <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                    <a className="nav-link" href="/">Home</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="/listings-search">Buy a Horse</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="/make-listing">Sell a Horse</a>
-                </li>
-            </ul>
-           <div className="login-register-group">
-           <Link to="/login">
-                <button className='btn btn-outline-light' >Log in</button>
-            </Link>
-            <Link to="/register">
-              <button className='btn btn-outline-green'>Register</button>
-            </Link>
-            </div>
-        </div>
+                <div className="collapse navbar-collapse ml-5" id="navbarNav">
+                    <ul className="navbar-nav mr-auto">
+                        <li className={`nav-item ${location.pathname === "/"? 'active': ''}`}>
+                            <a className="nav-link" href="/">Home</a>
+                        </li>
+                        <li className={`nav-item ${location.pathname === "/listings-search"? 'active': ''}`}>
+                            <a className="nav-link" href="/listings-search">Buy a Horse</a>
+                        </li>
+                        <li className={`nav-item ${location.pathname === "/make-listing"? 'active': ''}`}>
+                            <a className="nav-link" href="/make-listing">Sell a Horse</a>
+                        </li>
+                    </ul>
+                    <div className="login-register-group">
+                        <Link to="/login">
+                            <button className='btn btn-outline-light'>Log in</button>
+                        </Link>
+                        <Link to="/register">
+                            <button className='btn btn-outline-green'>Register</button>
+                        </Link>
+                    </div>
+                </div>
 
 
-        </nav>
-    </Styles>
-  )
+            </nav>
+        </Styles>
+    )
 }
 
 export {NavigationBar};

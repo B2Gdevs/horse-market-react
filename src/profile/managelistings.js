@@ -7,6 +7,7 @@ import {Modal} from "antd";
 import computer from "../assets/computer.jpg";
 import avatar from "../assets/avatar.jpg";
 import list from "../assets/list.jpg";
+import ProfileSlider from "../components/ProfileSlider";
 
 const Styles = styled.div`
     .sidenav {
@@ -25,6 +26,33 @@ const Styles = styled.div`
         color: white
         font-size: 18px;
     }
+        .navbar-icons {
+        width: 30px; 
+        height: 30px;
+    }
+    .navbar-text {
+        margin: 0; 
+        padding: 0;        
+    }
+    .icon-col {
+        height: 700px; 
+        width: 30%; 
+        background-color: #343A40;
+    }
+    .text-col {
+        height: 700px; 
+        width: 50%; 
+        background-color: #329329;
+    }
+    .search-button {
+        border: 1px solid black;
+    }
+    .edit-button {
+        color: #359328;
+    }
+    .delete-button {
+        color:red;
+    }
 `
 const ManageListing = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -40,39 +68,33 @@ const ManageListing = () => {
     const handleCancel = () => {
         setIsModalVisible(false);
     };
+    const content = [
+        {
+            image: horse1,
+            title: "Cras justo odio",
+            listingType: "Dapibus ac facilisis in",
+            price: "Morbi leo risus",
+        },
+        {
+            image: horse1,
+            title: "Cras justo odio",
+            listingType: "Dapibus ac facilisis in",
+            price: "Morbi leo risus",
+        },
+        {
+            image: horse1,
+            title: "Cras justo odio",
+            listingType: "Dapibus ac facilisis in",
+            price: "Morbi leo risus",
+        },
+    ]
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
                 <div className="d-flex">
-                    <div style={{color: "gray"}} className="sidenav d-flex">
-                        <div className="" style={{height: "700", width: "30%", backgroundColor: "#343A40"}}>
-                            <div className="row mt-4 ml-2">
-                                <div className="col-md-12">
-                                    <img style={{width: "30px", height: "30px"}} src={computer}/>
-                                </div>
-                                <div className="col-md-12 my-5">
-                                    <img style={{width: "30px", height: "30px"}} src={avatar}/>
-                                </div>
-                                <div className="col-md-12">
-                                    <img style={{width: "30px", height: "30px"}} src={list}/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="" style={{height: "700", width: "50%", backgroundColor: "#329329"}}>
-                            <div className="row mt-4 ml-2">
-                                <div className="col-md-12 side-bar-text">
-                                    <p style={{margin: 0, padding: 0}}>Dashboard</p>
-                                </div>
-                                <div className="col-md-12 my-5 side-bar-text">
-                                    <p style={{margin: 0, padding: 0}}>Edit Profile</p>
-                                </div>
-                                <div className="col-md-12 side-bar-text">
-                                    <p style={{margin: 0, padding: 0}}>Your Listings</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <ProfileSlider />
+
                     <div className="mainarea pt-5">
                         <div className="container my-5">
                             <div className="text-center">
@@ -83,7 +105,7 @@ const ManageListing = () => {
                             <div className="row">
                                 <div className="mr-auto d-flex">
                                     <input placeholder={"Search Listings"} className={"form-control"}/>
-                                    <button className={"btn"} style={{border: "1px solid black"}}>Search</button>
+                                    <button className={"btn search-button"}>Search</button>
 
                                     <button className={"btn btn-success ml-3 w-100"}>Create a listing</button>
                                 </div>
@@ -93,67 +115,30 @@ const ManageListing = () => {
                             </div>
 
                             <div className="row my-3">
-
-                                <div className="col-md-4">
-                                    <div className="card shadow">
-                                        <img className="px-1 py-3" src={horse1} alt={"img"}/>
-                                        <ul className="list-group">
-                                            <li className="list-group-item">Cras justo odio</li>
-                                            <li className="list-group-item">Dapibus ac facilisis in</li>
-                                            <li className="list-group-item">Morbi leo risus</li>
-                                            <li className="list-group-item">
-                                                <div className="row">
-                                                    <div className="col-md-6 text-center border-right">
-                                                        <p style={{color: "#359328"}}>Edit Listing</p>
+                                {content.map(data => (
+                                    <div className="col-md-4">
+                                        <div className="card shadow">
+                                            <img className="px-1 py-3" src={data.image} alt={"img"}/>
+                                            <ul className="list-group">
+                                                <li className="list-group-item">{data.title}</li>
+                                                <li className="list-group-item">{data.listingType}</li>
+                                                <li className="list-group-item">{data.price}</li>
+                                                <li className="list-group-item">
+                                                    <div className="row">
+                                                        <div className="col-md-6 text-center border-right">
+                                                            <button className={"btn edit-button"}>Edit Listing</button>
+                                                        </div>
+                                                        <div className="col-md-6 text-center">
+                                                            <button className={"btn delete-button"}
+                                                                    onClick={showModal}>Delete
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    <div className="col-md-6 text-center">
-                                                        <p style={{color: "red"}} onClick={showModal}>Delete</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="col-md-4">
-                                    <div className="card shadow">
-                                        <img className="px-1 py-3" src={horse1} alt={"img"}/>
-                                        <ul className="list-group">
-                                            <li className="list-group-item">Cras justo odio</li>
-                                            <li className="list-group-item">Dapibus ac facilisis in</li>
-                                            <li className="list-group-item">Morbi leo risus</li>
-                                            <li className="list-group-item">
-                                                <div className="row">
-                                                    <div className="col-md-6 text-center border-right">
-                                                        <p style={{color: "#359328"}}>Edit Listing</p>
-                                                    </div>
-                                                    <div className="col-md-6 text-center">
-                                                        <p style={{color: "red"}} onClick={showModal}>Delete</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-md-4">
-                                    <div className="card shadow">
-                                        <img className="px-1 py-3" src={horse1} alt={"img"}/>
-                                        <ul className="list-group">
-                                            <li className="list-group-item">Cras justo odio</li>
-                                            <li className="list-group-item">Dapibus ac facilisis in</li>
-                                            <li className="list-group-item">Morbi leo risus</li>
-                                            <li className="list-group-item">
-                                                <div className="row">
-                                                    <div className="col-md-6 text-center border-right">
-                                                        <p style={{color: "#359328"}}>Edit Listing</p>
-                                                    </div>
-                                                    <div className="col-md-6 text-center">
-                                                        <p style={{color: "red"}} onClick={showModal}>Delete</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                ))}
 
                             </div>
 
@@ -168,7 +153,6 @@ const ManageListing = () => {
                         </div>
                     </div>
                 </div>
-                <Footer/>
             </div>
         </Styles>
     );
