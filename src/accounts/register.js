@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {NavigationBar} from "../components/navbar";
 import {Footer} from "../components/footer";
-
+import { useInput } from '../input-hook';
 
 const Styles = styled.div`
     .main-area {
@@ -14,11 +14,21 @@ const Styles = styled.div`
 `
 
 const Register = () => {
+
+    const {value:email, bind:bindEmail, reset:resetEmail} = useInput("")
+    const {value:firstName, bind:bindFirstName, reset:resetFirstName} = useInput("")
+    const {value:lastName, bind:bindLastName, reset:resetLastName} = useInput("")
+    const {value:password, bind:bindPassword, reset:resetPassword} = useInput("")
+    const handleSubmit = () => {
+        console.log("Captured Information: ", email, firstName, lastName, password)
+        resetEmail()
+        resetFirstName()
+        resetLastName()
+        resetPassword()
+    }
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
-
                 <div className="container p-5">
                     <div className="text-center">
                         <h1>Register</h1>
@@ -26,21 +36,19 @@ const Register = () => {
                     </div>
                     <div className="">
                         <label>Email Address</label>
-                        <input className={"form-control mb-3"} placeholder={'Email Address'}/>
+                        <input className={"form-control mb-3"} placeholder={'Email Address'} {...bindEmail}/>
                         <label>Full Name</label>
-                        <input className={"form-control mb-3"} placeholder={'First name'}/>
+                        <input className={"form-control mb-3"} placeholder={'First name'} {...bindFirstName}/>
                         <label>Last Name</label>
-                        <input className={"form-control mb-3"} placeholder={'Last name'}/>
+                        <input className={"form-control mb-3"} placeholder={'Last name'} {...bindLastName}/>
                         <label>Password</label>
-                        <input className={"form-control mb-5"} placeholder={'password'}/>
+                        <input className={"form-control mb-5"} placeholder={'password'} {...bindPassword}/>
                     </div>
                     <div className="row justify-content-center">
-                        <button className={"btn btn-outline-primary mr-4"}>Register</button>
-                        <button className={"btn btn-outline-dark"}>I already have an account</button>
+                        <button className={"btn btn-success mr-4"} onClick={handleSubmit}>Register</button>
+                        <a href={"/login"} className={"btn btn-outline-dark"}>I already have an account</a>
                     </div>
                 </div>
-
-                <Footer/>
             </div>
         </Styles>
     )

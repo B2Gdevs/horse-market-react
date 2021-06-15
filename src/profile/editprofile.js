@@ -7,13 +7,20 @@ import {Modal} from "antd";
 import avatar from '../assets/avatar.jpg'
 import computer from '../assets/computer.jpg'
 import list from '../assets/list.jpg'
+import {useInput} from "../input-hook";
+import ProfileSlider from "../components/ProfileSlider";
 
 const Styles = styled.div`
+    .page-content {
+        position: relative; 
+        overflow: auto;
+    }
     .sidenav {
         opacity:0.8;
         width:20%;
         height:700px;
         overflow: auto;
+        color: gray;
     }
     .mainarea {
         opacity:0.8;
@@ -25,12 +32,47 @@ const Styles = styled.div`
         color: white
         font-size: 18px;
     }
+    .navbar-icons {
+        width: 30px; 
+        height: 30px;
+    }
+    .navbar-text {
+        margin: 0; 
+        padding: 0;        
+    }
+    .icon-col {
+        height: 700px; 
+        width: 30%; 
+        background-color: #343A40;
+    }
+    .text-col {
+        height: 700px; 
+        width: 50%; 
+        background-color: #329329;
+    }
 `
 const EditProfile = () => {
 
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const {value: name, bind: bindName, reset: resetName} = useInput('');
+    const {value: state, bind: bindState, reset: resetState} = useInput('');
+
+    const {value: email, bind: bindEmail, reset: resetEmail} = useInput('');
+    const {value: zip, bind: bindZip, reset: resetZip} = useInput('');
+    const {value: address, bind: bindAddress, reset: resetAddress} = useInput('');
+
+    const {value: phone, bind: bindPhone, reset: resetPhone} = useInput('');
+    const {value: city, bind: bindCity, reset: resetCity} = useInput('');
 
     const showModal = () => {
+        console.log("Captured Info: ", name, state, email, zip, address, phone, city)
+        resetName()
+        resetState()
+        resetEmail()
+        resetZip()
+        resetAddress()
+        resetPhone()
+        resetCity()
         setIsModalVisible(true);
     };
 
@@ -46,36 +88,8 @@ const EditProfile = () => {
     return (
         <Styles>
             <div className="">
-                <NavigationBar/>
-                <div className="d-flex" style={{position: "relative", overflow: "auto"}}>
-                    <div style={{color: "gray"}} className="sidenav d-flex">
-                        <div className="" style={{height: "700", width: "30%", backgroundColor: "#343A40"}}>
-                            <div className="row mt-4 ml-2">
-                                <div className="col-md-12">
-                                    <img style={{width: "30px", height: "30px"}} src={computer}/>
-                                </div>
-                                <div className="col-md-12 my-5">
-                                    <img style={{width: "30px", height: "30px"}} src={avatar}/>
-                                </div>
-                                <div className="col-md-12">
-                                    <img style={{width: "30px", height: "30px"}} src={list}/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="" style={{height: "700", width: "50%", backgroundColor: "#329329"}}>
-                            <div className="row mt-4 ml-2">
-                                <div className="col-md-12 side-bar-text">
-                                    <p style={{margin: 0, padding: 0}}>Dashboard</p>
-                                </div>
-                                <div className="col-md-12 my-5 side-bar-text">
-                                    <p style={{margin: 0, padding: 0}}>Edit Profile</p>
-                                </div>
-                                <div className="col-md-12 side-bar-text">
-                                    <p style={{margin: 0, padding: 0}}>Your Listings</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="d-flex page-content" style={{}}>
+                    <ProfileSlider />
                     <div className="mainarea pt-5">
                         <div className="container mt-5">
                             <div className="text-center">
@@ -90,26 +104,26 @@ const EditProfile = () => {
                                 <div className="row">
                                     <div className="col-md-6">
                                         <label>Your Name</label>
-                                        <input className={"form-control"} placeholder={"Your Name"}/>
+                                        <input {...bindName} className={"form-control"} placeholder={"Your Name"}/>
 
                                         <label>Email</label>
-                                        <input className={"form-control"} placeholder={"Email"}/>
+                                        <input {...bindEmail} className={"form-control"} placeholder={"Email"}/>
 
                                         <label>Your Address</label>
-                                        <input className={"form-control"} placeholder={"Your Address"}/>
+                                        <input {...bindAddress} className={"form-control"} placeholder={"Your Address"}/>
 
                                         <label>City</label>
-                                        <input className={"form-control"} placeholder={"City"}/>
+                                        <input {...bindCity} className={"form-control"} placeholder={"City"}/>
                                     </div>
                                     <div className="col-md-6">
                                         <label>State</label>
-                                        <input className={"form-control"} placeholder={"State"}/>
+                                        <input {...bindState} className={"form-control"} placeholder={"State"}/>
 
                                         <label>Zip</label>
-                                        <input className={"form-control"} placeholder={"Zip"}/>
+                                        <input {...bindZip} className={"form-control"} placeholder={"Zip"}/>
 
                                         <label>Phone</label>
-                                        <input className={"form-control"} placeholder={"Phone"}/>
+                                        <input {...bindPhone} className={"form-control"} placeholder={"Phone"}/>
                                     </div>
                                 </div>
                                 <div className="row my-3">
@@ -127,7 +141,6 @@ const EditProfile = () => {
                         </div>
                     </div>
                 </div>
-                <Footer/>
             </div>
 
         </Styles>
