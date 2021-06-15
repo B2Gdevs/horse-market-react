@@ -188,3 +188,7 @@ code {
 #left-text {
   float: left;
 }
+
+.navbar-text {
+  color: white;
+}
