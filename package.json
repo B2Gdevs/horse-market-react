@@ -6,6 +6,7 @@
     "antd": "^4.16.3",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "lodash": "^4.17.21",
     "react": "^16.14.0",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^16.14.0",

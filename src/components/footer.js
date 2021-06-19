@@ -1,156 +1,188 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
-import {Container} from 'reactstrap';
+import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
+import { FaFacebookF } from 'react-icons/fa';
+import { FiTwitter, FiInstagram } from 'react-icons/fi';
+import { CgHome } from 'react-icons/cg';
+import { BsEnvelope } from 'react-icons/bs';
+import _ from 'lodash';
 
+// Styles
 const Styles = styled.div`
-  .footer-links {
-    color: white;
-  }
+	.footer-links {
+		color: white;
+	}
 
-  .footer-header {
-    color: white;
-  }
+	.sub-header {
+		color: white;
+	}
 
-  .copyright {
-    background-color: #4b545c;
-    color: white;
-  }
-  .copyright span {
-    font-size: 15px;
-  }
+	.copyright {
+		background-color: #4b545c;
+		color: white;
+	}
+	.copyright span {
+		font-size: 15px;
+	}
 
-  .social-icons {
-    font-size: 30px;
-  }
+	.social-icons {
+		font-size: 30px;
+	}
 
-  .footer-info {
-    color: white;
-  }
+	.footer-info {
+		color: white;
+	}
 
-  #footer-logo {
-    height: 150px;
-    width: 250px;
-  }
+	#footer-logo {
+		height: 150px;
+		width: 250px;
+	}
 
-  .footer-icon-bar {
-    background-color: #329329;
-  }
-  .footer-icon-bar .social-icon {
-    color: #212629;
-  }
+	.footer-icon-bar {
+		background-color: #329329;
+	}
+	.footer-icon-bar .social-icon {
+		color: #212629;
+	}
 
-  .outline{
-    background-color: #343A40;
-  }
-`
+	.outline {
+		background-color: #343a40;
+	}
 
-let marketConfiguration = {
-  "name": "HorseMarket"
-}
+	.header {
+		background-color: #329329;
+	}
 
+	.accent {
+		border-top-color: white;
+	}
+`;
+
+// Configuration Data
+let configData = {
+	marketName: 'HorseMarket',
+	contactEmail: 'contact@horsemarket.com',
+	location: 'Austin, TX 78749, US',
+	companyName: 'Garrard LLC',
+	facebookPage: '/',
+	twitterPage: '/',
+	instagramPage: '/',
+	products: [
+		{
+			name: 'HorseMarket',
+			href: '/'
+		},
+		{
+			name: 'BoatMarket',
+			href: '/'
+		},
+		{
+			name: 'TrailerMarket',
+			href: '/'
+		}
+	],
+	usefulLinks: [
+		{
+			name: 'Horsetrainers',
+			href: '/'
+		},
+		{
+			name: 'How to sell quickly',
+			href: '/'
+		},
+		{
+			name: 'How to know a good buy',
+			href: '/'
+		}
+	]
+};
+
+// Functions - None available ATM
+
+// Components
 const Footer = () => {
-  return (
-    <Styles>
-      <footer className="page-footer font-small unique-color-dark outline">
+	return (
+		<Styles>
+			<Container fluid>
+				<Row className="header py-4 d-flex align-items-center">
+					{/* Spacing */}
+					<Col md={2} />
+					<Col md={2} className="text-center text-md-left mb-4 mb-md-0">
+						<h6 className="mb-0 footer-info">Get connected with us on social networks!</h6>
+					</Col>
+					<Col md={8} className="text-center text-right">
+						{configData.facebookPage && (
+							<FaFacebookF className="social-icon ml-2" href={configData.facebookPage} />
+						)}
+						{configData.twitterPage && (
+							<FiTwitter className="social-icon ml-2" href={configData.twitterPage} />
+						)}
+						{configData.instagramPage && (
+							<FiInstagram className="social-icon ml-2" href={configData.instagramPage} />
+						)}
+					</Col>
+				</Row>
 
-          <div className="footer-icon-bar">
-            <Container>
+				<Row className="outline text-center py-4">
+					<Col md={3} className="mx-auto mb-4">
+						<h6 className="text-uppercase font-weight-bold sub-header">{configData.marketName}</h6>
+						<hr className="accent accent-2 mb-4 mt-0 " style={{ width: '60px' }} />
+						<p className="footer-info">
+							{configData.marketName} with AI assistance to help you get from post to sale as quickly as
+							possible.
+						</p>
+					</Col>
 
-              <div className="row py-4 d-flex align-items-center">
+					<Col md={2} lg={2} xl={2} className="mx-auto mb-4">
+						<h6 className="text-uppercase font-weight-bold sub-header">Products</h6>
+						<hr className="accent accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '60px' }} />
+						<Nav vertical>
+							{_.map(configData.products, (product) => {
+								return (
+									<NavItem>
+										<NavLink href={product.href}>{product.name}</NavLink>
+									</NavItem>
+								);
+							})}
+						</Nav>
+					</Col>
 
-                <div className="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                  <h6 className="mb-0 footer-info">Get connected with us on social networks!</h6>
-                </div>
-                <div className="col-md-6 col-lg-7 text-center text-md-right">
-                  <a className="social-icon" href="/">
-                    <i className="fa fa-facebook-f  mr-4"> </i>
-                  </a>
+					<Col md={3} lg={2} xl={2} className="mx-auto mb-4">
+						<h6 className="text-uppercase font-weight-bold sub-header">Useful links</h6>
+						<hr className="accent accent-2 mb-4 mt-0 " style={{ width: '60px' }} />
+						<Nav vertical>
+							{_.map(configData.usefulLinks, (link) => {
+								return (
+									<NavItem>
+										<NavLink href={link.href}>{link.name}</NavLink>
+									</NavItem>
+								);
+							})}
+						</Nav>
+					</Col>
 
-                  <a className="social-icon" href="/">
-                    <i className="fa fa-twitter  mr-4"> </i>
-                  </a>
+					<Col md={4} lg={3} xl={3} className="mx-auto mb-md-0 mb-4">
+						<h6 className="text-uppercase font-weight-bold sub-header">Contact</h6>
+						<hr className="accent accent-2 mb-4 mt-0" style={{ width: '60px' }} />
+						<p className="footer-info">
+							<CgHome className="mr-3" /> {configData.location}
+						</p>
+						<p className="footer-info">
+							<BsEnvelope className="mr-3" /> {configData.contactEmail}
+						</p>
+					</Col>
+				</Row>
+				<Row>
+					<Col md={12}>
+						<div className="footer-copyright text-center py-3 copyright">
+							© 2019 Copyright:
+							<span className="font-weight-bold text-uppercase"> {configData.companyName}</span>
+						</div>
+					</Col>
+				</Row>
+			</Container>
+		</Styles>
+	);
+};
 
-                </div>
-
-              </div>
-
-            </Container>
-          </div>
-
-          <div className="container text-center text-md-left mt-5">
-
-            <div className="row mt-3">
-
-              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-                <h6 className="text-uppercase font-weight-bold footer-header">RVMarket</h6>
-                <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}}/>
-                <p className="footer-info">RVMarket helps you get from post to sale as quickly as possible.</p>
-
-              </div>
-
-              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                <h6 className="text-uppercase font-weight-bold footer-header">Products</h6>
-                <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}}/>
-                <p>
-                  <a href="#!">...</a>
-                </p>
-                <p>
-                  <a href="#!">...</a>
-                </p>
-                <p>
-                  <a href="#!">...</a>
-                </p>
-                <p>
-                  <a href="#!">...</a>
-                </p>
-
-              </div>
-
-              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                <h6 className="text-uppercase font-weight-bold footer-header">Useful links</h6>
-                <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}}/>
-                <p>
-                  <a href="#!">...</a>
-                </p>
-                <p>
-                  <a href="#!">...</a>
-                </p>
-                <p>
-                  <a href="#!">...</a>
-                </p>
-                <p>
-                  <a href="#!">...</a>
-                </p>
-
-              </div>
-
-              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                <h6 className="text-uppercase font-weight-bold footer-header">Contact</h6>
-                <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: "60px"}}></hr>
-                <p className="footer-info">
-                  <i className="fa fa-home mr-3"></i> Austin, TX 78749, US</p>
-                <p className="footer-info">
-                  <i className="fa fa-envelope mr-3"></i> contact@rv-market.com</p>
-                <p className="footer-info">
-                  <i className="fa fa-phone mr-3"></i>TBD</p>
-                <p className="footer-info">
-                  <i className="fa fa-print mr-3"></i>TBD</p>
-
-              </div>
-
-            </div>
-          </div>
-          <div className="footer-copyright text-center py-3 copyright">© 2019 Copyright:
-            <span className="font-weight-bold text-uppercase"> Garrard LLC</span>
-          </div>
-
-      </footer>
-    </Styles>
-  )
-}
-
-export {Footer};
+export { Footer };
