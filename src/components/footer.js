@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import {Container} from 'reactstrap';
 
 const Styles = styled.div`
   .footer-links {
@@ -43,22 +44,24 @@ const Styles = styled.div`
   }
 `
 
+let marketConfiguration = {
+  "name": "HorseMarket"
+}
+
 const Footer = () => {
   return (
     <Styles>
       <footer className="page-footer font-small unique-color-dark outline">
 
           <div className="footer-icon-bar">
-            <div className="container">
+            <Container>
 
               <div className="row py-4 d-flex align-items-center">
 
                 <div className="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
                   <h6 className="mb-0 footer-info">Get connected with us on social networks!</h6>
                 </div>
-
                 <div className="col-md-6 col-lg-7 text-center text-md-right">
-
                   <a className="social-icon" href="/">
                     <i className="fa fa-facebook-f  mr-4"> </i>
                   </a>
@@ -71,7 +74,7 @@ const Footer = () => {
 
               </div>
 
-            </div>
+            </Container>
           </div>
 
           <div className="container text-center text-md-left mt-5">

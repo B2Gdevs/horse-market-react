@@ -1,47 +1,45 @@
-import React, {Fragment} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import LandingPage from "./pages/LandingPage";
-import Login from "./accounts/login";
-import Register from "./accounts/register";
-import MakeListing from "./MakeListing/makelisting";
-import SubscriptionPage from "./MakeListing/subscriptionpage";
-import BuyListing from "./MakeListing/buylisting";
-import EditProfile from "./profile/editprofile";
-import ManageListing from "./profile/managelistings";
-import EditListing from "./profile/EditListings";
-import ListingsDetails from "./details/ListingsDetails";
-import ListingsSearch from "./details/ListingSearch";
-import {Footer} from "./components/footer";
-import {NavigationBar} from "./components/navbar";
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import Login from './pages/LoginPage';
+import Register from './pages/RegisterPage';
+import MakeListing from './pages/MakeListingPage';
+import SubscriptionPage from './pages/SubscriptionPage';
+import BuyListing from './pages/BuyListingPage';
+import EditProfile from './pages/EditProfilePage';
+import ManageListing from './pages/ManagelistingsPage';
+import EditListing from './pages/EditListingsPage';
+import ListingDetail from './components/ListingDetail';
+import ListingsSearch from './components/ListingSearch';
+import { Footer } from './components/Footer';
+import { NavigationBar } from './components/NavigationBar';
 
 function App() {
-    return (
-        <Fragment>
-            <Router>
-                <NavigationBar/>
-                <Switch>
+	return (
+		<Fragment>
+			<Router>
+				<NavigationBar />
+				<Switch>
+					<Route exact path="/" component={HomePage} />
 
-                    <Route exact path="/" component={LandingPage}/>
+					<Route exact path="/login" component={Login} />
+					<Route exact path="/register" component={Register} />
 
-                    <Route exact path="/login" component={Login}/>
-                    <Route exact path="/register" component={Register}/>
+					<Route exact path="/make-listing" component={MakeListing} />
+					<Route exact path="/subscription-page" component={SubscriptionPage} />
+					<Route exact path="/buy-listing" component={BuyListing} />
 
-                    <Route exact path="/make-listing" component={MakeListing}/>
-                    <Route exact path="/subscription-page" component={SubscriptionPage}/>
-                    <Route exact path="/buy-listing" component={BuyListing}/>
+					<Route exact path="/edit-profile" component={EditProfile} />
+					<Route exact path="/manage-listings" component={ManageListing} />
+					<Route exact path="/edit-listings" component={EditListing} />
 
-                    <Route exact path="/edit-profile" component={EditProfile}/>
-                    <Route exact path="/manage-listings" component={ManageListing}/>
-                    <Route exact path="/edit-listings" component={EditListing}/>
-
-                    <Route exact path="/listings-details" component={ListingsDetails}/>
-                    <Route exact path="/listings-search" component={ListingsSearch}/>
-
-                </Switch>
-                <Footer/>
-            </Router>
-        </Fragment>
-    );
+					<Route exact path="/listings-details" component={ListingDetail} />
+					<Route exact path="/listings-search" component={ListingsSearch} />
+				</Switch>
+				<Footer />
+			</Router>
+		</Fragment>
+	);
 }
 
 export default App;
