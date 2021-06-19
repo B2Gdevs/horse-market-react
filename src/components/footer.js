@@ -27,6 +27,9 @@ const Styles = styled.div`
 
 	.social-icons {
 		font-size: 30px;
+		color: green;
+		background-color: transparent;
+		text-decoration: none;
 	}
 
 	.footer-info {
@@ -55,6 +58,11 @@ const Styles = styled.div`
 
 	.accent {
 		border-top-color: white;
+	}
+
+	a:link {
+		color: white;
+		outline-color: white;
 	}
 `;
 
@@ -105,20 +113,27 @@ const Footer = () => {
 		<Styles>
 			<Container fluid>
 				<Row className="header py-4 d-flex align-items-center">
-					{/* Spacing */}
+					{/* Spacing only*/}
 					<Col md={2} />
+					{/* Spacing only*/}
 					<Col md={2} className="text-center text-md-left mb-4 mb-md-0">
 						<h6 className="mb-0 footer-info">Get connected with us on social networks!</h6>
 					</Col>
 					<Col md={8} className="text-center text-right">
 						{configData.facebookPage && (
-							<FaFacebookF className="social-icon ml-2" href={configData.facebookPage} />
+							<a classname="social-icon" href={configData.facebookPage}>
+								<FaFacebookF className="ml-2" />
+							</a>
 						)}
 						{configData.twitterPage && (
-							<FiTwitter className="social-icon ml-2" href={configData.twitterPage} />
+							<a classname="social-icon" href={configData.twitterPage}>
+								<FiTwitter className=" ml-2" />
+							</a>
 						)}
 						{configData.instagramPage && (
-							<FiInstagram className="social-icon ml-2" href={configData.instagramPage} />
+							<a classname="social-icon" href={configData.instagramPage}>
+								<FiInstagram className="ml-2" href={configData.instagramPage} />
+							</a>
 						)}
 					</Col>
 				</Row>

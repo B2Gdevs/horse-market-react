@@ -234,8 +234,6 @@ const ListingsSearch = () => {
 				<div className="my-5">
 					<Slide>
 						<SlideItem horseData={horseData} />
-						<SlideItem horseData={horseData} />
-						<SlideItem horseData={horseData} />
 					</Slide>
 				</div>
 
