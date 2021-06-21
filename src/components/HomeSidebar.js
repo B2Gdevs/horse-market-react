@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import _ from 'lodash';
 import { inputHook } from '../shared/Hooks';
+import { GetCompositeId } from '../shared/Utilities/utils';
 
 // Styles
 const Styles = {
@@ -88,13 +89,7 @@ let configData = {
 	]
 };
 
-// Functions
-/**
- * @param {string} name 
- */
-const GetCompositeId = (name) => {
-	return name.replace(' ', '');
-};
+// Functions - non ATM
 
 // Components
 const SideBarDropDown = (props) => {

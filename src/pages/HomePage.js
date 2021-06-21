@@ -1,16 +1,16 @@
-import { useState } from 'react';
 import React from 'react';
 import styled from 'styled-components';
 import horse1 from '../assets/horse1.jpg';
 import horse2 from '../assets/horse2.jpg';
 import horse3 from '../assets/horse3.jpeg';
 import horse4 from '../assets/horse4.jpg';
-import SlideData from '../components/SlideItem';
+import SlideItem from '../components/SlideItem';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Container, Row, Col, Button } from 'reactstrap';
 import HomeSidebar from '../components/HomeSidebar';
 
+// Styles
 const Styles = styled.div`
 	.sidenav {
 		opacity: 1;
@@ -51,7 +51,31 @@ const Styles = styled.div`
 	}
 `;
 
-// replace with api call to retrieve data later.
+// Configuration Data
+let configData = {
+	product: {
+		name: 'Horse'
+	},
+	responsive: {
+		desktop: {
+			breakpoint: { max: 3000, min: 1024 },
+			items: 4,
+			slidesToSlide: 1 // optional, default to 1.
+		},
+		tablet: {
+			breakpoint: { max: 1024, min: 464 },
+			items: 2,
+			slidesToSlide: 2 // optional, default to 1.
+		},
+		mobile: {
+			breakpoint: { max: 464, min: 0 },
+			items: 1,
+			slidesToSlide: 1 // optional, default to 1.
+		}
+	}
+};
+
+// App data
 const horseData = [
 	{
 		image: horse1,
@@ -79,27 +103,7 @@ const horseData = [
 	}
 ];
 
-const responsive = {
-	desktop: {
-		breakpoint: { max: 3000, min: 1024 },
-		items: 4,
-		slidesToSlide: 1 // optional, default to 1.
-	},
-	tablet: {
-		breakpoint: { max: 1024, min: 464 },
-		items: 2,
-		slidesToSlide: 2 // optional, default to 1.
-	},
-	mobile: {
-		breakpoint: { max: 464, min: 0 },
-		items: 1,
-		slidesToSlide: 1 // optional, default to 1.
-	}
-};
-
 const HomePage = () => {
-	const [ page, setPage ] = useState(0);
-
 	return (
 		<Styles>
 			<Container fluid>
@@ -110,10 +114,10 @@ const HomePage = () => {
 							<h1 className="ml-3 horse-heading">Horse Market</h1>
 							<Col md={12}>
 								<Button outline color="primary" className="mr-2">
-									Sell a horse
+									Sell a {configData.product.name}
 								</Button>
 								<Button outline color="success">
-									Buy a horse
+									Buy a {configData.product.name}
 								</Button>
 							</Col>
 						</Col>
@@ -123,7 +127,7 @@ const HomePage = () => {
 								swipeable={false}
 								draggable={false}
 								showDots={true}
-								responsive={responsive}
+								responsive={configData.responsive}
 								ssr={true} // means to render carousel on server-side.
 								infinite={true}
 								// autoPlay={this.props.deviceType !== "mobile" ? true : false}
@@ -137,7 +141,7 @@ const HomePage = () => {
 								dotListClass="custom-dot-list-style"
 								itemClass="full-fit"
 							>
-								{horseData.map((horse) => <SlideData horseData={horse} />)}
+								{horseData.map((slideData) => <SlideItem slideData={slideData} />)}
 							</Carousel>
 						</Col>
 					</Col>

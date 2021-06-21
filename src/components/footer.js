@@ -7,7 +7,6 @@ import { CgHome } from 'react-icons/cg';
 import { BsEnvelope } from 'react-icons/bs';
 import _ from 'lodash';
 
-// Styles
 const Styles = styled.div`
 	.footer-links {
 		color: white;

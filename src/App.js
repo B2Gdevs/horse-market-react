@@ -10,7 +10,7 @@ import EditProfile from './pages/EditProfilePage';
 import ManageListing from './pages/ManagelistingsPage';
 import EditListing from './pages/EditListingsPage';
 import ListingDetail from './components/ListingDetail';
-import ListingsSearch from './components/ListingSearch';
+import ListingsSearchPage from './pages/ListingSearchPage';
 import { Footer } from './components/Footer';
 import { NavigationBar } from './components/NavigationBar';
 
@@ -34,7 +34,7 @@ function App() {
 					<Route exact path="/edit-listings" component={EditListing} />
 
 					<Route exact path="/listings-details" component={ListingDetail} />
-					<Route exact path="/listings-search" component={ListingsSearch} />
+					<Route exact path="/listings-search" component={ListingsSearchPage} />
 				</Switch>
 				<Footer />
 			</Router>

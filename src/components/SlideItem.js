@@ -1,31 +1,32 @@
 import React from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Styles = styled.div`
-    .horse-price {
-        color: green;
-    }
-    .horse-desc {
-        color: #BABABC;
-    }
-    img {
-        object-fit: cover;
-        height: 300px;
-        Width: 300px;
-      }
-`
+	.slide-price {
+		color: green;
+	}
+	.slide-desc {
+		color: #bababc;
+	}
+	img {
+		object-fit: cover;
+		height: 300px;
+		Width: 300px;
+	}
+`;
 
-const SlideData = ({horseData}) => (
-    <Styles>
-        <div className="card shadow">
-            <img src={horseData.image} alt={""} />
-            <div className="p-1">
-                <p className={"horse-price"}>{horseData.price}</p>
-                <p>{horseData.desc}</p>
-                <p className={"horse-desc"}>{horseData.location}</p>
-            </div>
-        </div>
-    </Styles>
-)
+const SlideItem = ({ slideData }) => (
+	<Styles>
+		<div className="card shadow">
+			<img src={slideData.image} alt={''} />
+			<div className="p-1">
+				<h4 className="slide-title">{slideData.title}</h4>
+				<p className="slide-price">{slideData.price}</p>
+				<p>{slideData.desc}</p>
+				<p className="slide-desc">{slideData.location}</p>
+			</div>
+		</div>
+	</Styles>
+);
 
-export default SlideData;
+export default SlideItem;
