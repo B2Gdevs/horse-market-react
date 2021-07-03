@@ -6,13 +6,16 @@ import horse2 from '../assets/horse2.jpg';
 import horse3 from '../assets/horse3.jpeg';
 import horse4 from '../assets/horse4.jpg';
 import 'antd/dist/antd.css';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { HiLocationMarker, HiOutlineTrash } from 'react-icons/hi';
 import SearchFilter from '../components/filters/SearchFilter';
+import SearchSort from '../components/sorts/SearchSort';
 import SlideItem from '../components/SlideItem';
 import _ from 'lodash';
 import Carousel from 'react-multi-carousel';
 import { Container, Row, Col, Card, CardBody, CardImg, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
+
+import { configData } from './pageConfigs/ListingSearchConfig';
 
 // Styles
 const Styles = styled.div`
@@ -128,177 +131,6 @@ const Styles = styled.div`
 	// 	padding: 0;
 	// }
 `;
-
-// Configuration Data
-let configData = {
-	responsive: {
-		desktop: {
-			breakpoint: { max: 3000, min: 1024 },
-			items: 4,
-			slidesToSlide: 1 // optional, default to 1.
-		},
-		tablet: {
-			breakpoint: { max: 1024, min: 464 },
-			items: 2,
-			slidesToSlide: 2 // optional, default to 1.
-		},
-		mobile: {
-			breakpoint: { max: 464, min: 0 },
-			items: 1,
-			slidesToSlide: 1 // optional, default to 1.
-		}
-	},
-	searchOptions: [
-		{
-			filterType: 'SearchForWithinFilter',
-			filterConfiguration: {
-				category: 'Location',
-				searchField: 'Zipcode',
-				options: [
-					{
-						value: 100,
-						description: 'within 100'
-					},
-					{
-						value: 250,
-						description: 'within 250'
-					},
-					{
-						value: 500,
-						description: 'within 500'
-					},
-					{
-						value: 1000,
-						description: 'within 1000'
-					},
-					{
-						value: -1,
-						description: 'any distance'
-					}
-				]
-			}
-		},
-		{
-			filterType: 'SearchForFilter',
-			filterConfiguration: {
-				category: 'Dam',
-				searchField: 'Dam'
-			}
-		},
-		{
-			filterType: 'SearchForFilter',
-			filterConfiguration: {
-				category: 'Sire',
-				searchField: 'Sire'
-			}
-		},
-		{
-			filterType: 'SearchForWithinFilter',
-			filterConfiguration: {
-				category: 'Age',
-				searchField: 'Age',
-				options: [
-					{
-						value: 1,
-						description: 'less than 1 year'
-					},
-					{
-						value: 5,
-						description: 'within 5 years'
-					},
-					{
-						value: 10,
-						description: 'within 10 years'
-					},
-					{
-						value: 15,
-						description: 'within 15 years'
-					},
-					{
-						value: -1,
-						description: 'any age'
-					}
-				]
-			}
-		},
-		{
-			filterType: 'SearchForOptionsFilter',
-			filterConfiguration: {
-				category: 'Gender',
-				searchField: 'Gender',
-				options: [
-					{
-						value: 1,
-						description: 'Male'
-					},
-					{
-						value: 2,
-						description: 'Female'
-					}
-				]
-			}
-		},
-		{
-			filterType: 'SearchForWithinFilter',
-			filterConfiguration: {
-				category: 'Price',
-				searchField: 'Price',
-				options: [
-					{
-						value: 500,
-						description: 'within 500'
-					},
-					{
-						value: 1000,
-						description: 'within 1000'
-					},
-					{
-						value: 2500,
-						description: 'within 2500'
-					},
-					{
-						value: -1,
-						description: 'any price'
-					}
-				]
-			}
-		},
-		{
-			filterType: 'SearchForOptionsFilter',
-			filterConfiguration: {
-				category: 'Discipline',
-				searchField: 'Discipline',
-				options: [
-					{
-						value: 1,
-						description: 'Barrel Racing'
-					},
-					{
-						value: 2,
-						description: 'Cattle Roping'
-					}
-				]
-			}
-		},
-		{
-			filterType: 'SearchForOptionsFilter',
-			filterConfiguration: {
-				category: 'Breading Capable',
-				searchField: 'Breading Capable',
-				options: [
-					{
-						value: 1,
-						description: 'Yes'
-					},
-					{
-						value: 2,
-						description: 'No'
-					}
-				]
-			}
-		}
-	]
-};
 
 // Functions
 let getListings = () => {
@@ -456,8 +288,31 @@ let featureListingData = [
 	}
 ];
 
-const ListingsSearchPage = () => {
-	const [ liked, setLiked ] = useState(false);
+const FilterSection = () => {
+	return (
+		<div className="filter-item-title">
+			<div className="filter-item-wrapper filter-margin">
+				<span className="filter-text">Filter</span>
+				<span className="filter-text right-span">
+					<HiOutlineTrash /> Search
+				</span>
+			</div>
+			{_.map(configData.filterOptions, (filterOption) => {
+				return (
+					<SearchFilter
+						filterType={filterOption.filterType}
+						filterConfiguration={filterOption.filterConfiguration}
+					/>
+				);
+			})}
+			<Button type="submit" color="danger" onClick={getListings}>
+				Reset
+			</Button>
+		</div>
+	);
+};
+
+const SortSection = () => {
 	const [ copiedListingData, setListingData ] = useState(listingData);
 
 	// TODO, this needs to be abstracted with configuration data
@@ -494,12 +349,71 @@ const ListingsSearchPage = () => {
 			})
 		);
 
-	const filterSorting = _.cond([
+	const SortListings = _.cond([
 		[ isDistance, sortByDistance ],
 		[ isAge, sortByAge ],
 		[ isPrice, sortByPrice ],
 		[ isDateListed, sortByDateListed ]
 	]);
+
+	return (
+		<Row className="p-3 sort">
+			<Col md={12} className="p-3 matches text-center">
+				Showing {listingData.length} out of {listingData.length} Matches
+			</Col>
+			<Col md={12}>
+				<p>Sort</p>
+			</Col>
+			{_.map(configData.sortOptions, (sortOption) => {
+				return (
+					<Col>
+						<SearchSort sortConfiguration={sortOption.sortConfiguration} />
+					</Col>
+				);
+			})}
+		</Row>
+	);
+};
+
+const ListingSection = () => {
+	const [ copiedListingData, setListingData ] = useState(listingData);
+	return (
+		<Col md={12} className="p-5 listing-content">
+			{copiedListingData.map((listing) => (
+				<Col md={12}>
+					<Card>
+						<Row className="no-gutters">
+							<Col md={4}>
+								<CardImg left width="100%" src={listing.image} alt="Card image cap" />
+							</Col>
+							<Col md={8}>
+								<CardBody>
+									<CardTitle tag="h5">{listing.title}</CardTitle>
+									<CardSubtitle tag="h6" className="mb-2 text-muted">
+										${listing.price} - {_.capitalize(listing.sellerType)} Seller
+										<p>
+											<HiLocationMarker className="mr-1" />
+											{_.upperCase(listing.location)}
+										</p>
+									</CardSubtitle>
+									<CardText>{listing.description}</CardText>
+									<Link to="/listing-detail">
+										<Button>Go to listing</Button>
+									</Link>
+								</CardBody>
+							</Col>
+						</Row>
+					</Card>
+					<p />
+				</Col>
+			))}
+		</Col>
+	);
+};
+
+const ListingsSearchPage = () => {
+	const [ liked, setLiked ] = useState(false);
+	const [ copiedListingData, setListingData ] = useState(listingData);
 
 	return (
 		<Styles>
@@ -531,124 +445,12 @@ const ListingsSearchPage = () => {
 
 				<Row className="my-5">
 					<Col md={3} className="my-3 search-section">
-						<div className="filter-item-title">
-							<div className="filter-item-wrapper filter-margin">
-								<span className="filter-text">Filter</span>
-								<span className="filter-text right-span">
-									<HiOutlineTrash /> Search
-								</span>
-							</div>
-							{_.map(configData.searchOptions, (searchOption) => {
-								console.log(searchOption.filterConfiguration);
-								return (
-									<SearchFilter
-										filterType={searchOption.filterType}
-										filterConfiguration={searchOption.filterConfiguration}
-									/>
-								);
-							})}
-							<button type="submit" className="btn btn-danger" onClick={getListings}>
-								Reset
-							</button>
-						</div>
+						<FilterSection />
 					</Col>
 					<Col md={9} className="horse-section">
-						<Row className="p-3 sort">
-							<Col md={12} className="p-3 matches text-center">
-								Showing 1 out of 1 Matches
-							</Col>
-							<Col md={2}>
-								<p>Sort</p>
-								<p>By Distance</p>
-								<select
-									className="form-control"
-									aria-label="Default select example"
-									onChange={filterSorting}
-									name="distance"
-								>
-									<option selected>Select</option>
-									{copiedListingData.map((listing) => (
-										<option value={listing.distance}>{listing.distance}</option>
-									))}
-								</select>
-							</Col>
-							{/* <div className="mx-2">
-									<p>By Age</p>
-									<select
-										className="form-control"
-										aria-label="Default select example"
-										onChange={filterSorting}
-										name="age"
-									>
-										<option selected>Select</option>
-										{copiedListingData.map((horse) => (
-											<option value={horse.age}>{horse.age}</option>
-										))}
-									</select>
-								</div>
-								<div className="">
-									<p>By Price</p>
-									<select
-										className="form-control"
-										aria-label="Default select example"
-										onChange={filterSorting}
-										name="price"
-									>
-										<option selected>Select</option>
-										{copiedListingData.map((horse) => (
-											<option value={horse.price}>{horse.price}</option>
-										))}
-									</select>
-								</div>
-								<div className="mx-2">
-									<p>By Date Listed</p>
-									<select
-										className="form-control"
-										aria-label="Default select example"
-										onChange={filterSorting}
-										name="dateListed"
-									>
-										<option selected>Select</option>
-										{copiedListingData.map((horse) => (
-											<option value={horse.dateListed}>{horse.dateListed}</option>
-										))}
-									</select>
-								</div> */}
-						</Row>
+						<SortSection />
 						<Row className="p-4 listing-area">
-							<Col md={12} className="p-5 listing-content">
-								{copiedListingData.map((listing) => (
-									<Col md={12}>
-										<Card>
-											<Row className="no-gutters">
-												<Col md={4}>
-													<CardImg
-														left
-														width="100%"
-														src={listing.image}
-														alt="Card image cap"
-													/>
-												</Col>
-												<Col md={8}>
-													<CardBody>
-														<CardTitle tag="h5">{listing.title}</CardTitle>
-														<CardSubtitle tag="h6" className="mb-2 text-muted">
-															${listing.price} - {_.capitalize(listing.sellerType)} Seller
-															<p>
-																<HiLocationMarker className="mr-1" />
-																{_.upperCase(listing.location)}
-															</p>
-														</CardSubtitle>
-														<CardText>{listing.description}</CardText>
-														<Button>Button</Button>
-													</CardBody>
-												</Col>
-											</Row>
-										</Card>
-										<p />
-									</Col>
-								))}
-							</Col>
+							<ListingSection />
 						</Row>
 					</Col>
 				</Row>

@@ -33,7 +33,7 @@ function App() {
 					<Route exact path="/manage-listings" component={ManageListing} />
 					<Route exact path="/edit-listings" component={EditListing} />
 
-					<Route exact path="/listings-details" component={ListingDetail} />
+					<Route exact path="/listing-detail" component={ListingDetail} />
 					<Route exact path="/listings-search" component={ListingsSearchPage} />
 				</Switch>
 				<Footer />

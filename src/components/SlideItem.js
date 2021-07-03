@@ -21,8 +21,8 @@ const SlideItem = ({ slideData }) => (
 			<img src={slideData.image} alt={''} />
 			<div className="p-1">
 				<h4 className="slide-title">{slideData.title}</h4>
-				<p className="slide-price">{slideData.price}</p>
-				<p>{slideData.desc}</p>
+				<p className="slide-price">${slideData.price}</p>
+				<p>{slideData.description}</p>
 				<p className="slide-desc">{slideData.location}</p>
 			</div>
 		</div>
